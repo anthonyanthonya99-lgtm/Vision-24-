@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vision — Événementiel premium à Paris & Île-de-France</title>
+    <meta
+      name="description"
+      content="Photobooth, Box Magazine, Vidéobooth 360 et Bar Gourmand pour vos événements. Prestations haut de gamme à Paris, en Île-de-France, partout en France et à l'étranger. Réponse sous 24 à 48h."
+    />
+    <meta name="theme-color" content="#560216" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Vision — Événementiel premium" />
+    <meta
+      property="og:description"
+      content="Animations événementielles sur mesure : photobooth, box magazine, vidéobooth 360, bar gourmand. Paris & Île-de-France."
+    />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Favicon SVG monogramme -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23560216'/%3E%3Ctext x='50%25' y='58%25' font-family='Georgia,serif' font-size='34' font-style='italic' text-anchor='middle' fill='%23ede1d8'%3EV%3C/text%3E%3C/svg%3E"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- =========================================================
+         INTRO — Logo qui s'écrit
+         ========================================================= -->
+    <div class="intro" aria-hidden="true">
+      <div class="intro__inner">
+        <img
+          class="intro__logo"
+          src="assets/img/logo-bordeaux.png"
+          alt="Vision"
+          fetchpriority="high"
+          onload="this.classList.add('is-loaded')"
+        />
+        <span class="intro__tagline">Votre projet, notre vision</span>
+      </div>
+    </div>
+
+    <!-- =========================================================
+         NAV
+         ========================================================= -->
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#top" class="nav__brand" aria-label="Vision — accueil">
+        <img src="assets/img/logo-bordeaux.png" alt="Vision" class="nav__brand-img"
+             onload="this.classList.add('is-loaded'); this.nextElementSibling.style.display='none';" />
+        <span class="nav__brand-text">Vision</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#bestsellers">Best Sellers</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#devis" class="btn btn--primary nav__cta">
+        Demander un devis
+        <span class="btn__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 12h14M13 5l7 7-7 7" />
+          </svg>
+        </span>
+      </a>
+      <button
+        class="nav__burger"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+      >
+        <span></span>
+      </button>
+    </nav>
+
+    <div class="nav-overlay" aria-hidden="true">
+      <ul class="nav-overlay__links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#bestsellers">Best Sellers</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#devis">Devis</a></li>
+      </ul>
+    </div>
+
+    <!-- =========================================================
+         HERO
+         ========================================================= -->
+    <header class="hero hero--bg" id="top">
+      <!-- Photo en arrière-plan — version floutée (couche du bas) -->
+      <div class="hero-bg__media hero-bg__media--blur" aria-hidden="true">
+        <img
+          src="assets/img/hero-collage.jpg"
+          alt=""
+          fetchpriority="high"
+        />
+      </div>
+      <!-- Même photo, version NETTE — clippée à droite pour garder le photobooth cristallin -->
+      <div class="hero-bg__media hero-bg__media--sharp" aria-hidden="true">
+        <img src="assets/img/hero-collage.jpg" alt="" />
+      </div>
+      <!-- Voile dégradé pour la lisibilité (gauche vers droite) -->
+      <div class="hero-bg__scrim" aria-hidden="true"></div>
+
+      <div class="hero-bg__inner page">
+        <div class="hero-bg__content">
+          <h1 class="hero-bg__title hero-anim">
+            Créez des souvenirs<br />
+            que vos invités<br />
+            <em>n'oublieront jamais.</em>
+          </h1>
+
+          <p class="hero-bg__sub hero-anim">
+            Mariages, anniversaires, événements professionnels — une expérience
+            mémorable pour vos invités.
+          </p>
+
+          <div class="hero-bg__ctas hero-anim">
+            <a href="#services" class="btn btn--primary">
+              Découvrir nos prestations
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+            <a href="#devis" class="btn btn--ghost btn--on-dark">
+              Demandez un devis
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- =========================================================
+         PRÉSENTATION ENTREPRISE
+         ========================================================= -->
+    <section class="section about" id="about">
+      <div class="page">
+        <div class="about__grid">
+          <div class="about__media js-reveal">
+            <img
+              src="assets/img/anthony-lison.jpg"
+              alt="Anthony et Lison, fondateurs de Vision"
+              class="about__photo"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="about__body">
+            <span class="eyebrow js-reveal">Anthony &amp; Lison · Fondateurs</span>
+            <h2 class="js-reveal" data-delay="0.05">
+              Le couple derrière<br />
+              chacun de vos <em>événements</em>
+            </h2>
+            <p class="js-reveal" data-delay="0.1">
+              Nous sommes Anthony et Lison, un couple qui met tout son cœur
+              dans chaque événement que vous nous confiez. Photobooth,
+              Vidéobooth 360°, Bar Gourmand, Box Magazine, Structure
+              Gonflable&nbsp;: nous imaginons avec vous des expériences qui
+              marquent les esprits.
+            </p>
+            <p class="js-reveal" data-delay="0.15">
+              Nous intervenons&nbsp;:
+            </p>
+            <div class="about__areas js-reveal" data-delay="0.2">
+              <span>Partout en France</span>
+            </div>
+            <div class="about__cta-row js-reveal" data-delay="0.3">
+              <a href="#devis" class="btn btn--primary">
+                Discutons de votre projet
+                <span class="btn__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 12h14M13 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </a>
+              <small>Réponse sous 24 à 48 heures.</small>
+            </div>
+
+            <!-- Rejoignez-nous — réseaux sociaux -->
+            <div class="about__join js-reveal" data-delay="0.35">
+              <span class="about__join-label">Rejoignez-nous</span>
+              <div class="about__join-row">
+                <a href="https://www.instagram.com/__vision24__/" target="_blank" rel="noopener" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.5 1s.8.9 1 1.5c.2.4.3 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3-.2.6-.5 1-1 1.5s-.9.8-1.5 1c-.4.2-1.1.3-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4-.6-.2-1-.5-1.5-1s-.8-.9-1-1.5c-.2-.4-.3-1.1-.4-2.3-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 1-1.5s.9-.8 1.5-1c.4-.2 1.1-.3 2.3-.4 1.2-.1 1.6-.1 4.8-.1zM12 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 10.2a4 4 0 110-8 4 4 0 010 8zm6.4-10.5a1.4 1.4 0 100 2.8 1.4 1.4 0 000-2.8z"/></svg>
+                  <span>Instagram</span>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61586950779816&locale=fr_FR" target="_blank" rel="noopener" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.2-1.5 1.5-1.5h1.6V3.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.7V13h2.7v8h3.1z"/></svg>
+                  <span>Facebook</span>
+                </a>
+                <a href="https://www.tiktok.com/@__vision24__?_r=1&_t=ZN-989IR5186XG" target="_blank" rel="noopener" aria-label="TikTok">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 8.5c-1.5 0-2.9-.6-3.9-1.5v7.4c0 3.4-2.7 6.1-6.1 6.1S2.9 17.8 2.9 14.4s2.7-6.1 6.1-6.1c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.1-.9-.1-1.7 0-3.1 1.4-3.1 3.1s1.4 3.1 3.1 3.1 3.1-1.4 3.1-3.1V2h3c.1 2.4 2 4.4 4.4 4.4v2.1H19z"/></svg>
+                  <span>TikTok</span>
+                </a>
+                <a href="https://www.linkedin.com/company/vision24-studio/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V9h3v10zM6.5 7.7a1.7 1.7 0 110-3.5 1.7 1.7 0 010 3.5zM19 19h-3v-5c0-1.2-.5-2-1.5-2-1 0-1.5.7-1.5 2v5h-3V9h3v1.5c.5-.8 1.4-1.5 3-1.5 2.2 0 3 1.5 3 4v6z"/></svg>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SERVICES — Éditorial rows avec image au hover
+         ========================================================= -->
+    <section class="section services" id="services">
+      <div class="page">
+        <div class="svc-head js-reveal">
+          <h2 class="svc-title">
+            <span class="svc-title__word svc-title__word--small">Nos</span>
+            <span class="svc-title__word svc-title__word--italic">Prestations</span>
+          </h2>
+        </div>
+
+        <ul class="svc-rows">
+          <li class="svc-row js-reveal">
+            <a href="services/photobooth.html" class="svc-row__link">
+              <span class="svc-row__num">01</span>
+              <span class="svc-row__name">Photobooth</span>
+              <span class="svc-row__tag">Borne miroir · tirages instantanés</span>
+              <span class="svc-row__cta">
+                <span class="svc-row__cta-text">Découvrir</span>
+                <span class="svc-row__cta-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </span>
+              </span>
+              <img class="svc-row__preview" src="assets/img/prestations/photobooth/IMG_2461.jpg" alt="" loading="lazy" />
+            </a>
+          </li>
+
+          <li class="svc-row js-reveal" data-delay="0.05">
+            <a href="services/videobooth-360.html" class="svc-row__link">
+              <span class="svc-row__num">02</span>
+              <span class="svc-row__name">Vidéobooth 360 avec structure gonflable</span>
+              <span class="svc-row__tag">Slow motion · effet cinéma · fond lumineux</span>
+              <span class="svc-row__cta">
+                <span class="svc-row__cta-text">Découvrir</span>
+                <span class="svc-row__cta-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </span>
+              </span>
+              <img class="svc-row__preview" src="assets/img/prestations/videobooth-360/11.jpg" alt="" loading="lazy" />
+            </a>
+          </li>
+
+          <li class="svc-row js-reveal" data-delay="0.1">
+            <a href="services/bar-gourmand.html" class="svc-row__link">
+              <span class="svc-row__num">03</span>
+              <span class="svc-row__name">Bar Gourmand</span>
+              <span class="svc-row__tag">Sucré · salé · latte art</span>
+              <span class="svc-row__cta">
+                <span class="svc-row__cta-text">Découvrir</span>
+                <span class="svc-row__cta-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </span>
+              </span>
+              <img class="svc-row__preview" src="assets/img/prestations/bar-gourmand/IMG_6156.jpg" alt="" loading="lazy" />
+            </a>
+          </li>
+
+          <li class="svc-row js-reveal" data-delay="0.15">
+            <a href="services/box-magazine.html" class="svc-row__link">
+              <span class="svc-row__num">04</span>
+              <span class="svc-row__name">Box Magazine</span>
+              <span class="svc-row__tag">Vos invités en couverture</span>
+              <span class="svc-row__cta">
+                <span class="svc-row__cta-text">Découvrir</span>
+                <span class="svc-row__cta-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </span>
+              </span>
+              <img class="svc-row__preview" src="assets/img/prestations/box-magazine/IMG_7613_3.jpg" alt="" loading="lazy" />
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         MARQUEE — Bande défilante des prestations
+         ========================================================= -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Photobooth</span><span class="marquee__dot">✦</span>
+        <span>Vidéobooth 360</span><span class="marquee__dot">✦</span>
+        <span>Box Magazine</span><span class="marquee__dot">✦</span>
+        <span>Bar événementiel</span><span class="marquee__dot">✦</span>
+        <span>Animations gourmandes</span><span class="marquee__dot">✦</span>
+        <!-- Doublon pour boucle continue -->
+        <span>Photobooth</span><span class="marquee__dot">✦</span>
+        <span>Vidéobooth 360</span><span class="marquee__dot">✦</span>
+        <span>Box Magazine</span><span class="marquee__dot">✦</span>
+        <span>Bar événementiel</span><span class="marquee__dot">✦</span>
+        <span>Animations gourmandes</span><span class="marquee__dot">✦</span>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         BEST SELLERS — Massive typo + featured showcase
+         ========================================================= -->
+    <section class="section bs-section" id="bestsellers">
+      <div class="page">
+        <div class="bs-head js-reveal">
+          <h2 class="bs-title">
+            <span class="bs-title__word bs-title__word--small">Nos</span>
+            <span class="bs-title__word">best</span>
+            <span class="bs-title__word bs-title__word--italic">sellers</span>
+          </h2>
+        </div>
+
+        <div class="bs-showcase js-reveal">
+          <!-- Colonne image (change avec la sélection) -->
+          <div class="bs-showcase__media">
+            <div class="bs-showcase__photo is-active" data-idx="0">
+              <img src="assets/img/prestations/bar-gourmand/IMG_6096.jpg" alt="Bar Gourmand Vision en événement" loading="lazy" />
+              <div class="bs-showcase__chips">
+                <span class="bs-chip">🥞 Mini pancakes</span>
+                <span class="bs-chip">🌭 Hot dogs</span>
+                <span class="bs-chip">☕ Bar à chocolat chaud avec impression sur la mousse</span>
+                <span class="bs-chip">🥞 Crêpes</span>
+                <span class="bs-chip">🧇 Gaufres</span>
+              </div>
+            </div>
+            <div class="bs-showcase__photo" data-idx="1">
+              <img src="assets/img/photobooth.jpg" alt="Photobooth Vision" loading="lazy" />
+              <div class="bs-showcase__chips">
+                <span class="bs-chip">📸 Borne miroir</span>
+                <span class="bs-chip">🖨️ Tirages instantanés</span>
+                <span class="bs-chip">🎭 Accessoires premium</span>
+              </div>
+            </div>
+            <div class="bs-showcase__photo" data-idx="2">
+              <img src="assets/img/box-magazine.png" alt="Box Magazine Vision" loading="lazy" />
+              <div class="bs-showcase__chips">
+                <span class="bs-chip">📖 Format A5 Premium</span>
+                <span class="bs-chip">🎨 Impression sur mesure</span>
+                <span class="bs-chip">✨ Esprit magazine</span>
+              </div>
+            </div>
+            <div class="bs-showcase__photo" data-idx="3">
+              <img src="assets/img/prestations/videobooth-360/IMG_7561.jpg" alt="Vidéobooth 360 Vision" loading="lazy" />
+              <div class="bs-showcase__chips">
+                <span class="bs-chip">🎥 Plateforme 360° pro</span>
+                <span class="bs-chip">⚡ Vidéos HD & ralentis</span>
+                <span class="bs-chip">📱 Partage QR instantané</span>
+                <span class="bs-chip">🎨 Habillage personnalisé</span>
+                <span class="bs-chip">👤 Animateur dédié</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colonne liste rotative -->
+          <div class="bs-showcase__list">
+            <button class="bs-item is-active" data-idx="0">
+              <span class="bs-item__num">01</span>
+              <span class="bs-item__body">
+                <span class="bs-item__name">Bar Gourmand</span>
+                <span class="bs-item__tag">Sucré · Salé · Boissons chaudes</span>
+              </span>
+              <span class="bs-item__progress"><span></span></span>
+            </button>
+            <button class="bs-item" data-idx="1">
+              <span class="bs-item__num">02</span>
+              <span class="bs-item__body">
+                <span class="bs-item__name">Photobooth</span>
+                <span class="bs-item__tag">Borne miroir · Tirages instantanés</span>
+              </span>
+              <span class="bs-item__progress"><span></span></span>
+            </button>
+            <button class="bs-item" data-idx="2">
+              <span class="bs-item__num">03</span>
+              <span class="bs-item__body">
+                <span class="bs-item__name">Box Magazine</span>
+                <span class="bs-item__tag">Vos invités en couverture</span>
+              </span>
+              <span class="bs-item__progress"><span></span></span>
+            </button>
+            <button class="bs-item" data-idx="3">
+              <span class="bs-item__num">04</span>
+              <span class="bs-item__body">
+                <span class="bs-item__name">Vidéobooth 360</span>
+                <span class="bs-item__tag">Plateforme immersive · Vidéos HD</span>
+              </span>
+              <span class="bs-item__progress"><span></span></span>
+            </button>
+
+            <a href="#devis" class="btn btn--primary bs-cta">
+              Réserver l'une de ces prestations
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+
+            <!-- Réseaux sociaux -->
+            <div class="bs-socials">
+              <span class="bs-socials__label">Retrouvez-nous</span>
+              <div class="bs-socials__row">
+                <a href="https://www.instagram.com/__vision24__/" target="_blank" rel="noopener" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.5 1s.8.9 1 1.5c.2.4.3 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3-.2.6-.5 1-1 1.5s-.9.8-1.5 1c-.4.2-1.1.3-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4-.6-.2-1-.5-1.5-1s-.8-.9-1-1.5c-.2-.4-.3-1.1-.4-2.3-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 1-1.5s.9-.8 1.5-1c.4-.2 1.1-.3 2.3-.4 1.2-.1 1.6-.1 4.8-.1zM12 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 10.2a4 4 0 110-8 4 4 0 010 8zm6.4-10.5a1.4 1.4 0 100 2.8 1.4 1.4 0 000-2.8z"/></svg>
+                  <span>Instagram</span>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61586950779816&locale=fr_FR" target="_blank" rel="noopener" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.2-1.5 1.5-1.5h1.6V3.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.7V13h2.7v8h3.1z"/></svg>
+                  <span>Facebook</span>
+                </a>
+                <a href="https://www.tiktok.com/@__vision24__?_r=1&_t=ZN-989IR5186XG" target="_blank" rel="noopener" aria-label="TikTok">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 8.5c-1.5 0-2.9-.6-3.9-1.5v7.4c0 3.4-2.7 6.1-6.1 6.1S2.9 17.8 2.9 14.4s2.7-6.1 6.1-6.1c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.1-.9-.1-1.7 0-3.1 1.4-3.1 3.1s1.4 3.1 3.1 3.1 3.1-1.4 3.1-3.1V2h3c.1 2.4 2 4.4 4.4 4.4v2.1H19z"/></svg>
+                  <span>TikTok</span>
+                </a>
+                <a href="https://www.linkedin.com/company/vision24-studio/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V9h3v10zM6.5 7.7a1.7 1.7 0 110-3.5 1.7 1.7 0 010 3.5zM19 19h-3v-5c0-1.2-.5-2-1.5-2-1 0-1.5.7-1.5 2v5h-3V9h3v1.5c.5-.8 1.4-1.5 3-1.5 2.2 0 3 1.5 3 4v6z"/></svg>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         POURQUOI NOUS CHOISIR
+         ========================================================= -->
+    <section class="section why">
+      <div class="page">
+        <div class="why__head">
+          <span class="eyebrow js-reveal">Pourquoi nous choisir ?</span>
+          <h2 class="js-reveal" data-delay="0.05">
+            Un accompagnement<br />
+            <em>à la hauteur</em> de votre événement
+          </h2>
+        </div>
+
+        <div class="why__grid">
+          <div class="why__item js-reveal">
+            <div class="why__icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L4 7v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V7l-8-5z" />
+              </svg>
+            </div>
+            <h3>Professionnels</h3>
+            <p>
+              Une équipe expérimentée, formée et à l'écoute de vos besoins.
+            </p>
+          </div>
+
+          <div class="why__item js-reveal" data-delay="0.05">
+            <div class="why__icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 21V8l9-5 9 5v13" />
+                <path d="M9 21v-8h6v8" />
+              </svg>
+            </div>
+            <h3>Installation comprise</h3>
+            <p>Nous arrivons, installons, animons et remballons. Zéro stress.</p>
+          </div>
+
+          <div class="why__item js-reveal" data-delay="0.1">
+            <div class="why__icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20" />
+              </svg>
+            </div>
+            <h3>Déplacement partout en France</h3>
+            <p>Partout en France.</p>
+          </div>
+
+          <div class="why__item js-reveal" data-delay="0.15">
+            <div class="why__icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+            </div>
+            <h3>Réponse rapide</h3>
+            <p>Un retour sous 24 à 48h. On avance vite sur votre projet.</p>
+          </div>
+
+          <div class="why__item js-reveal" data-delay="0.2">
+            <div class="why__icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            </div>
+            <h3>Matériel haut de gamme</h3>
+            <p>
+              Équipement récent, entretenu et esthétique.
+            </p>
+          </div>
+
+          <div class="why__item js-reveal" data-delay="0.25">
+            <div class="why__icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+              </svg>
+            </div>
+            <h3>Accompagnement personnalisé</h3>
+            <p>
+              Chaque événement est unique. Nous adaptons chaque détail à vos
+              envies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         TÉMOIGNAGES — Cards avec photos + CTA Google
+         ========================================================= -->
+    <section class="section testimonials">
+      <div class="page">
+        <div class="testimonials__head">
+          <div>
+            <span class="eyebrow js-reveal">Avis clients Google</span>
+            <h2 class="js-reveal" data-delay="0.05">
+              5<span style="color: rgba(237,225,216,0.4)">/5</span>
+              <em style="font-size: 0.55em; font-style: italic;">sur Google</em>
+            </h2>
+            <div class="testimonials__meta js-reveal" data-delay="0.1">
+              <span class="testimonials__stars-big">★★★★★</span>
+              <span class="testimonials__stat">Recommandé par 100% de nos clients</span>
+            </div>
+          </div>
+          <div class="testimonials__nav">
+            <button class="testimonials__prev" aria-label="Précédent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="testimonials__next" aria-label="Suivant">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="testimonials__track-wrap">
+          <div class="testimonials__track">
+            <article class="testimonial">
+              <div class="testimonial__inner">
+                <div class="testimonial__head">
+                  <div class="testimonial__avatar" style="background: linear-gradient(135deg, #c47a5e, #7d3b2a);">CJ</div>
+                  <div>
+                    <strong class="testimonial__name">Camille &amp; Julien</strong>
+                    <span class="testimonial__meta">Mariage · Fontainebleau</span>
+                  </div>
+                  <span class="testimonial__google" aria-label="Avis Google">
+                    <svg viewBox="0 0 48 48" width="18" height="18"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+                  </span>
+                </div>
+                <div class="testimonial__stars">★★★★★</div>
+                <p class="testimonial__quote">
+                  Une prestation impeccable pour notre mariage. Le photobooth a
+                  été le clou de la soirée, tout le monde en parle encore.
+                  Merci Anthony &amp; Lison !
+                </p>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <div class="testimonial__inner">
+                <div class="testimonial__head">
+                  <div class="testimonial__avatar" style="background: linear-gradient(135deg, #5e7ec4, #2a4a7d);">LD</div>
+                  <div>
+                    <strong class="testimonial__name">Léa D.</strong>
+                    <span class="testimonial__meta">Soirée d'entreprise · Paris 8e</span>
+                  </div>
+                  <span class="testimonial__google">
+                    <svg viewBox="0 0 48 48" width="18" height="18"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+                  </span>
+                </div>
+                <div class="testimonial__stars">★★★★★</div>
+                <p class="testimonial__quote">
+                  Le bar à café latte art avec notre logo a bluffé tous nos
+                  clients. Élégant, original, très professionnel.
+                </p>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <div class="testimonial__inner">
+                <div class="testimonial__head">
+                  <div class="testimonial__avatar" style="background: linear-gradient(135deg, #7e5ec4, #4a2a7d);">SM</div>
+                  <div>
+                    <strong class="testimonial__name">Sofia &amp; Marc</strong>
+                    <span class="testimonial__meta">Mariage · Chantilly</span>
+                  </div>
+                  <span class="testimonial__google">
+                    <svg viewBox="0 0 48 48" width="18" height="18"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+                  </span>
+                </div>
+                <div class="testimonial__stars">★★★★★</div>
+                <p class="testimonial__quote">
+                  Le vidéobooth 360 a créé un moment fou. Les vidéos sont
+                  magnifiques, on les regarde encore régulièrement.
+                </p>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <div class="testimonial__inner">
+                <div class="testimonial__head">
+                  <div class="testimonial__avatar" style="background: linear-gradient(135deg, #c45e9d, #7d2a5f);">MR</div>
+                  <div>
+                    <strong class="testimonial__name">Marion R.</strong>
+                    <span class="testimonial__meta">Anniversaire · Versailles</span>
+                  </div>
+                  <span class="testimonial__google">
+                    <svg viewBox="0 0 48 48" width="18" height="18"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+                  </span>
+                </div>
+                <div class="testimonial__stars">★★★★★</div>
+                <p class="testimonial__quote">
+                  Un couple adorable, super à l'écoute. Ils ont su rendre notre
+                  soirée d'anniversaire vraiment magique.
+                </p>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <div class="testimonial__inner">
+                <div class="testimonial__head">
+                  <div class="testimonial__avatar" style="background: linear-gradient(135deg, #5ec48f, #2a7d51);">AK</div>
+                  <div>
+                    <strong class="testimonial__name">Aurélie &amp; Karim</strong>
+                    <span class="testimonial__meta">Mariage · Sud de la France</span>
+                  </div>
+                  <span class="testimonial__google">
+                    <svg viewBox="0 0 48 48" width="18" height="18"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+                  </span>
+                </div>
+                <div class="testimonial__stars">★★★★★</div>
+                <p class="testimonial__quote">
+                  La Box Magazine est un souvenir incroyable. Chaque invité en
+                  parle. À refaire les yeux fermés.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="testimonials__cta-row js-reveal">
+          <a href="https://g.page/r/CeGNR7U98dafEAE/review" target="_blank" rel="noopener" class="btn btn--ghost btn--on-dark">
+            Voir tous nos avis sur Google
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FAQ
+         ========================================================= -->
+    <section class="section faq" id="faq">
+      <div class="page">
+        <div class="faq__grid">
+          <div class="faq__head">
+            <span class="eyebrow js-reveal">FAQ</span>
+            <h2 class="js-reveal" data-delay="0.05">
+              Les questions<br />
+              qu'on nous pose <em>souvent</em>
+            </h2>
+            <p class="js-reveal" data-delay="0.1">
+              Vous avez une autre question ? Écrivez-nous, on répond en 24 à
+              48h.
+            </p>
+          </div>
+
+          <ul class="faq__list js-reveal">
+            <li class="faq__item">
+              <button class="faq__q" aria-expanded="false">
+                Intervenez-vous partout en France ?
+                <span class="faq__toggle" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq__a">
+                <div class="faq__a-inner">
+                  Oui. Nous intervenons principalement en Île-de-France, mais
+                  nous pouvons nous déplacer partout en France selon votre
+                  projet et vos besoins. N'hésitez pas à nous contacter pour
+                  étudier votre demande.
+                </div>
+              </div>
+            </li>
+
+            <li class="faq__item">
+              <button class="faq__q" aria-expanded="false">
+                Combien de temps dure une prestation ?
+                <span class="faq__toggle" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq__a">
+                <div class="faq__a-inner">
+                  La durée de la prestation dépend entièrement de votre
+                  événement et de vos besoins. Nous réalisons des devis
+                  entièrement sur mesure afin de vous proposer une prestation
+                  parfaitement adaptée à votre projet.
+                </div>
+              </div>
+            </li>
+
+            <li class="faq__item">
+              <button class="faq__q" aria-expanded="false">
+                Proposez-vous un devis gratuit ?
+                <span class="faq__toggle" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq__a">
+                <div class="faq__a-inner">
+                  Oui, entièrement gratuit et sans engagement. Vous recevez
+                  votre devis personnalisé sous 24 à 48h.
+                </div>
+              </div>
+            </li>
+
+            <li class="faq__item">
+              <button class="faq__q" aria-expanded="false">
+                Quel est le délai de réservation ?
+                <span class="faq__toggle" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq__a">
+                <div class="faq__a-inner">
+                  Idéalement 3 à 6 mois à l'avance pour les week-ends de haute
+                  saison. Nous restons flexibles pour les demandes de dernière
+                  minute.
+                </div>
+              </div>
+            </li>
+
+            <li class="faq__item">
+              <button class="faq__q" aria-expanded="false">
+                Les animations sont-elles personnalisables ?
+                <span class="faq__toggle" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq__a">
+                <div class="faq__a-inner">
+                  Absolument. Décor, impressions, template photo, café
+                  personnalisé, magazine à vos couleurs. Tout est adaptable.
+                </div>
+              </div>
+            </li>
+
+            <li class="faq__item">
+              <button class="faq__q" aria-expanded="false">
+                Travaillez-vous avec les entreprises ?
+                <span class="faq__toggle" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq__a">
+                <div class="faq__a-inner">
+                  Oui, séminaires, lancements produits, soirées client,
+                  team-building. Facturation professionnelle disponible.
+                </div>
+              </div>
+            </li>
+
+            <li class="faq__item">
+              <button class="faq__q" aria-expanded="false">
+                Peut-on réserver plusieurs prestations ?
+                <span class="faq__toggle" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq__a">
+                <div class="faq__a-inner">
+                  Oui, et c'est même recommandé. Nous proposons des tarifs
+                  dégressifs pour les combinaisons de prestations.
+                </div>
+              </div>
+            </li>
+
+            <li class="faq__item">
+              <button class="faq__q" aria-expanded="false">
+                Les déplacements sont-ils inclus ?
+                <span class="faq__toggle" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq__a">
+                <div class="faq__a-inner">
+                  Oui. Les frais de déplacement sont inclus dans un rayon de
+                  20 km autour de Collégien. Au-delà, des frais supplémentaires
+                  peuvent être appliqués en fonction de la distance. Ceux-ci
+                  seront toujours précisés dans votre devis avant toute
+                  validation.
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FORMULAIRE DEVIS
+         ========================================================= -->
+    <section class="section form-section" id="devis">
+      <div class="page">
+        <div class="form-section__head">
+          <span class="eyebrow js-reveal">Devis gratuit</span>
+          <h2 class="js-reveal" data-delay="0.05">
+            Parlons de votre <em>événement</em>
+          </h2>
+          <p class="js-reveal" data-delay="0.1">
+            Réponse personnalisée sous 24 à 48h.
+          </p>
+        </div>
+
+        <div class="form-wrap js-reveal">
+          <form
+            id="devis-form"
+            action="https://formsubmit.co/ap.vision24@outlook.fr"
+            method="POST"
+          >
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="Nouvelle demande de devis — Vision" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="f-nom">Nom *</label>
+                <input id="f-nom" name="nom" type="text" required autocomplete="family-name" />
+              </div>
+              <div class="form-field">
+                <label for="f-prenom">Prénom *</label>
+                <input id="f-prenom" name="prenom" type="text" required autocomplete="given-name" />
+              </div>
+              <div class="form-field">
+                <label for="f-entreprise">Entreprise (facultatif)</label>
+                <input id="f-entreprise" name="entreprise" type="text" autocomplete="organization" />
+              </div>
+              <div class="form-field">
+                <label for="f-telephone">Téléphone *</label>
+                <input id="f-telephone" name="telephone" type="tel" required autocomplete="tel" />
+              </div>
+              <div class="form-field form-field--full">
+                <label for="f-email">Email *</label>
+                <input id="f-email" name="email" type="email" required autocomplete="email" />
+              </div>
+              <div class="form-field">
+                <label for="f-date">Date de l'événement *</label>
+                <input id="f-date" name="date" type="date" required />
+              </div>
+              <div class="form-field">
+                <label for="f-lieu">Lieu</label>
+                <input id="f-lieu" name="lieu" type="text" placeholder="Ville, département" />
+              </div>
+              <div class="form-field">
+                <label for="f-invites">Nombre d'invités</label>
+                <input id="f-invites" name="invites" type="number" min="1" placeholder="Ex. 120" />
+              </div>
+              <div class="form-field">
+                <label for="f-type">Type d'événement *</label>
+                <select id="f-type" name="type_evenement" required>
+                  <option value="">Choisir…</option>
+                  <option>Mariage</option>
+                  <option>Anniversaire</option>
+                  <option>Soirée d'entreprise</option>
+                  <option>Séminaire / Team-building</option>
+                  <option>Lancement produit</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label>Type de client *</label>
+                <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:0.3rem;">
+                  <label style="display:inline-flex; gap:0.4rem; align-items:center; padding:0.5rem 0.9rem; border:1px solid var(--line); border-radius:999px; cursor:pointer;">
+                    <input type="radio" name="type_client" value="Particulier" required /> Particulier
+                  </label>
+                  <label style="display:inline-flex; gap:0.4rem; align-items:center; padding:0.5rem 0.9rem; border:1px solid var(--line); border-radius:999px; cursor:pointer;">
+                    <input type="radio" name="type_client" value="Professionnel" /> Professionnel
+                  </label>
+                </div>
+              </div>
+              <div class="form-field form-field--full">
+                <label>Prestations souhaitées *</label>
+                <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:0.3rem;">
+                  <label style="display:inline-flex; gap:0.4rem; align-items:center; padding:0.5rem 0.9rem; border:1px solid var(--line); border-radius:999px; cursor:pointer;">
+                    <input type="checkbox" name="prestations" value="Photobooth" /> Photobooth
+                  </label>
+                  <label style="display:inline-flex; gap:0.4rem; align-items:center; padding:0.5rem 0.9rem; border:1px solid var(--line); border-radius:999px; cursor:pointer;">
+                    <input type="checkbox" name="prestations" value="Vidéobooth 360" /> Vidéobooth 360°
+                  </label>
+                  <label style="display:inline-flex; gap:0.4rem; align-items:center; padding:0.5rem 0.9rem; border:1px solid var(--line); border-radius:999px; cursor:pointer;">
+                    <input type="checkbox" name="prestations" value="Bar Gourmand" /> Bar Gourmand
+                  </label>
+                  <label style="display:inline-flex; gap:0.4rem; align-items:center; padding:0.5rem 0.9rem; border:1px solid var(--line); border-radius:999px; cursor:pointer;">
+                    <input type="checkbox" name="prestations" value="Box Magazine" /> Box Magazine
+                  </label>
+                </div>
+              </div>
+              <div class="form-field form-field--full">
+                <label for="f-message">Message</label>
+                <textarea
+                  id="f-message"
+                  name="message"
+                  placeholder="Racontez-nous votre projet, vos envies, votre ambiance…"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn btn--primary">
+                Envoyer ma demande
+                <span class="btn__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 12h14M13 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+            <p class="form-note">
+              Vos données restent confidentielles. Réponse sous 24 à 48h.
+            </p>
+          </form>
+
+          <div class="form-success" id="devis-success" aria-live="polite">
+            <div class="form-success__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            </div>
+            <h3>Demande envoyée</h3>
+            <p style="color: var(--ink-70); margin-inline:auto;">
+              Votre demande a bien été envoyée. Nous vous répondrons dans les
+              plus brefs délais.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+    <footer class="footer">
+      <div class="page">
+        <div class="footer__grid">
+          <div>
+            <span class="footer__brand">
+              <img src="assets/img/logo-creme.png" alt="Vision" class="footer__brand-img" />
+            </span>
+            <p class="footer__blurb">
+              Solution événementielle premium en Île-de-France et dans toute la France.
+            </p>
+            <div class="footer__socials">
+              <a href="https://www.instagram.com/__vision24__/" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.5 1s.8.9 1 1.5c.2.4.3 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3-.2.6-.5 1-1 1.5s-.9.8-1.5 1c-.4.2-1.1.3-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4-.6-.2-1-.5-1.5-1s-.8-.9-1-1.5c-.2-.4-.3-1.1-.4-2.3C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 1-1.5s.9-.8 1.5-1c.4-.2 1.1-.3 2.3-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.2 0-3.5 0-4.7.1-1 0-1.6.2-2 .3-.5.2-.8.4-1.2.8-.4.4-.6.7-.8 1.2-.1.4-.3 1-.3 2C3 8.5 3 8.8 3 12s0 3.5.1 4.7c0 1 .2 1.6.3 2 .2.5.4.8.8 1.2.4.4.7.6 1.2.8.4.1 1 .3 2 .3 1.2.1 1.5.1 4.7.1s3.5 0 4.7-.1c1 0 1.6-.2 2-.3.5-.2.8-.4 1.2-.8.4-.4.6-.7.8-1.2.1-.4.3-1 .3-2 .1-1.2.1-1.5.1-4.7s0-3.5-.1-4.7c0-1-.2-1.6-.3-2-.2-.5-.4-.8-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.1-1-.3-2-.3-1.2-.1-1.5-.1-4.7-.1zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 1.8a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zm5.1-2.1a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z"
+                  />
+                </svg>
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61586950779816&locale=fr_FR" target="_blank" rel="noopener" aria-label="Facebook">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.2-1.5 1.5-1.5h1.6V3.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.7V13h2.7v8h3.1z"
+                  />
+                </svg>
+              </a>
+              <a href="https://www.tiktok.com/@__vision24__?_r=1&_t=ZN-989IR5186XG" target="_blank" rel="noopener" aria-label="TikTok">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M19 8.5c-1.5 0-2.9-.6-3.9-1.5v7.4c0 3.4-2.7 6.1-6.1 6.1S2.9 17.8 2.9 14.4s2.7-6.1 6.1-6.1c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.1-.9-.1-1.7 0-3.1 1.4-3.1 3.1s1.4 3.1 3.1 3.1 3.1-1.4 3.1-3.1V2h3c.1 2.4 2 4.4 4.4 4.4v2.1H19z"
+                  />
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/company/vision24-studio/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24">
+                  <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V9h3v10zM6.5 7.7a1.7 1.7 0 110-3.5 1.7 1.7 0 010 3.5zM19 19h-3v-5c0-1.2-.5-2-1.5-2-1 0-1.5.7-1.5 2v5h-3V9h3v1.5c.5-.8 1.4-1.5 3-1.5 2.2 0 3 1.5 3 4v6z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li>Situé à Collégien</li>
+              <li>
+                <a href="mailto:ap.vision24@outlook.fr">ap.vision24@outlook.fr</a>
+              </li>
+              <li><a href="tel:+33782613216">07&nbsp;82&nbsp;61&nbsp;32&nbsp;16</a></li>
+              <li>Réponse sous 24&nbsp;h ouvrées</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Prestations</h4>
+            <ul>
+              <li><a href="services/photobooth.html">Photobooth</a></li>
+              <li><a href="services/videobooth-360.html">Vidéobooth 360°</a></li>
+              <li><a href="services/bar-gourmand.html">Bar Gourmand</a></li>
+              <li><a href="services/box-magazine.html">Box Magazine</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#about">À propos</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#devis">Demander un devis</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <span>© <span id="year"></span> Vision — Tous droits réservés</span>
+          <div style="display:flex; gap:1.4rem;">
+            <a href="#">Mentions légales</a>
+            <a href="#">Politique de confidentialité</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/form.js"></script>
+  </body>
+</html>

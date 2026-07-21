@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photobooth premium — Vision</title>
+    <meta name="description" content="Photobooth premium pour mariages, entreprises et soirées. Impressions instantanées, décor personnalisé, partage QR code, envoi mail, galerie privée. Paris & partout en France." />
+    <meta name="theme-color" content="#560216" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23560216'/%3E%3Ctext x='50%25' y='58%25' font-family='Georgia,serif' font-size='34' font-style='italic' text-anchor='middle' fill='%23ede1d8'%3EV%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body>
+    <nav class="nav is-shown">
+      <a href="../index.html" class="nav__brand" aria-label="Vision — accueil">
+        <img src="../assets/img/logo-bordeaux.png" alt="Vision" class="nav__brand-img" onload="this.classList.add('is-loaded'); this.nextElementSibling.style.display='none';" />
+        <span class="nav__brand-text">Vision</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html#about">À propos</a></li>
+        <li><a href="../index.html#services">Prestations</a></li>
+        <li><a href="../index.html#bestsellers">Best Sellers</a></li>
+        <li><a href="../index.html#faq">FAQ</a></li>
+      </ul>
+      <a href="#devis" class="btn btn--primary nav__cta">Demander un devis
+        <span class="btn__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </a>
+      <button class="nav__burger"><span></span></button>
+    </nav>
+    <div class="nav-overlay">
+      <ul class="nav-overlay__links">
+        <li><a href="../index.html#about">À propos</a></li>
+        <li><a href="../index.html#services">Prestations</a></li>
+        <li><a href="../index.html#bestsellers">Best Sellers</a></li>
+        <li><a href="../index.html#faq">FAQ</a></li>
+        <li><a href="#devis">Devis</a></li>
+      </ul>
+    </div>
+
+    <header class="svc-hero">
+      <div class="page svc-hero__inner">
+        <div class="svc-hero__breadcrumb"><a href="../index.html">Accueil</a> · Photobooth</div>
+        <span class="hero__eyebrow hero-anim">Prestation phare</span>
+        <h1 class="hero-anim">The <em>Photobooth</em></h1>
+        <p class="svc-hero__sub hero-anim">
+          Borne miroir premium, tirages instantanés, template à vos couleurs,
+          décor sur mesure. Vos invités repartent avec un souvenir en main —
+          et vous récupérez toutes les photos en galerie privée.
+        </p>
+        <div class="hero__ctas hero-anim" style="margin-top: 2rem;">
+          <a href="#devis" class="btn btn--primary">Réserver
+            <span class="btn__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- PERSONNALISATION avec photo annotée -->
+    <section class="section" style="background: var(--creme-30);">
+      <div class="page">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center;" class="svc-content">
+          <div>
+            <span class="eyebrow js-reveal">Personnalisation</span>
+            <h2 class="js-reveal" data-delay="0.05">Chaque détail à votre <em>image</em></h2>
+            <p class="js-reveal" data-delay="0.1" style="color: var(--ink-70);">
+              Cliquez sur les points bordeaux pour découvrir ce qu'on
+              personnalise : façade, interface, cadre photo, accessoires…
+              Rien n'est laissé au hasard.
+            </p>
+            <ul class="svc-list js-reveal" data-delay="0.15" style="margin-top: var(--s-6);">
+              <li>Façade entièrement personnalisable</li>
+              <li>Interface & animation d'accueil personnalisées</li>
+              <li>Cadre photo aux couleurs de l'événement</li>
+              <li>Impression instantanée haute qualité</li>
+              <li>Partage QR Code + envoi mail + galerie privée</li>
+              <li>Création de porte-clés personnalisés</li>
+              <li>Accessoires premium inclus</li>
+              <li>Installation, démontage et assistance sur place</li>
+            </ul>
+          </div>
+
+          <div class="annot-photo js-reveal">
+            <img src="../assets/img/prestations/photobooth/IMG_2461.jpg" alt="Photobooth Vision personnalisé" />
+            <div class="annot" style="top: 15%; left: 28%;">
+              <span class="annot__dot"></span>
+              <span class="annot__label">Façade entièrement personnalisable aux couleurs de votre événement</span>
+            </div>
+            <div class="annot annot--left" style="top: 35%; left: 72%;">
+              <span class="annot__dot"></span>
+              <span class="annot__label">Interface tactile personnalisée (logo, prénoms, thème)</span>
+            </div>
+            <div class="annot annot--left" style="top: 62%; left: 78%;">
+              <span class="annot__dot"></span>
+              <span class="annot__label">Accessoires premium inclus (lunettes, chapeaux, pancartes)</span>
+            </div>
+            <div class="annot annot--left" style="top: 85%; left: 78%;">
+              <span class="annot__dot"></span>
+              <span class="annot__label">Installation, démontage et assistance dédiée</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FONCTIONNALITÉS EN GRILLE -->
+    <section class="section" id="comprendre" style="background: var(--creme);">
+      <div class="page">
+        <div style="text-align: center; max-width: 640px; margin: 0 auto var(--s-16);">
+          <span class="eyebrow js-reveal">Ce qu'on inclut</span>
+          <h2 class="js-reveal" data-delay="0.05">Tout est <em>compris</em></h2>
+          <p class="js-reveal" data-delay="0.1" style="color: var(--ink-70); margin-inline: auto; margin-top: var(--s-4);">
+            Vos invités arrivent, choisissent leur pose, impriment leur photo
+            en moins de 15 secondes, la partagent par QR code ou email —
+            pendant que vous profitez pleinement de votre événement.
+          </p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card js-reveal">
+            <div class="feat-card__icon"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 7l2-3h4l2 3"/></svg></div>
+            <h3>Borne miroir premium</h3>
+            <p>Écran tactile HD, appareil photo pro, éclairage LED intégré.</p>
+          </div>
+          <div class="feat-card js-reveal" data-delay="0.05">
+            <div class="feat-card__icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12h8M8 8h8M8 16h5"/></svg></div>
+            <h3>Impressions illimitées</h3>
+            <p>Sans compteur, sans limite. Chaque invité repart avec sa photo.</p>
+          </div>
+          <div class="feat-card js-reveal" data-delay="0.1">
+            <div class="feat-card__icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><path d="M14 14h2v2M20 16v4h-4M16 20h4"/></svg></div>
+            <h3>QR Code de partage</h3>
+            <p>Un scan et la photo est sur leur téléphone en 3 secondes.</p>
+          </div>
+          <div class="feat-card js-reveal" data-delay="0.15">
+            <div class="feat-card__icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+            <h3>Envoi par mail</h3>
+            <p>Vos invités saisissent leur email, ils reçoivent la photo directement.</p>
+          </div>
+          <div class="feat-card js-reveal" data-delay="0.2">
+            <div class="feat-card__icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></div>
+            <h3>Galerie privée</h3>
+            <p>Vous recevez toutes les photos HD dans un espace privé le lendemain.</p>
+          </div>
+          <div class="feat-card js-reveal" data-delay="0.25">
+            <div class="feat-card__icon"><svg viewBox="0 0 24 24"><circle cx="7" cy="7" r="3"/><path d="M9 9l10 10M15 15l4-4M14 17l3 3"/></svg></div>
+            <h3>Porte-clés personnalisés</h3>
+            <p>Option premium : chaque photo devient un porte-clés souvenir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIE MASONRY -->
+    <section class="section" style="background: var(--creme-30);">
+      <div class="page">
+        <div style="text-align: center; margin-bottom: var(--s-12);">
+          <span class="eyebrow js-reveal">En situation</span>
+          <h2 class="js-reveal" data-delay="0.05">Le Photobooth <em>en événement</em></h2>
+        </div>
+        <div class="svc-masonry">
+          <div class="svc-masonry__item js-reveal"><img src="../assets/img/prestations/photobooth/IMG_2835.jpg" alt="Photobooth Vision — décor personnalisé" loading="lazy" /></div>
+          <div class="svc-masonry__item js-reveal" data-delay="0.05"><img src="../assets/img/prestations/photobooth/IMG_3023.jpg" alt="Photobooth Vision — ambiance" loading="lazy" /></div>
+          <div class="svc-masonry__item js-reveal" data-delay="0.1"><img src="../assets/img/prestations/photobooth/IMG_4245.jpg" alt="Photobooth Vision — décor Instagram" loading="lazy" /></div>
+          <div class="svc-masonry__item js-reveal" data-delay="0.15"><img src="../assets/img/prestations/photobooth/IMG_6999.jpg" alt="Photobooth Vision en événement" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVIS CLIENTS -->
+    <section class="section" style="background: var(--creme);">
+      <div class="page">
+        <div style="text-align: center; margin-bottom: var(--s-16);">
+          <span class="eyebrow js-reveal">Avis clients</span>
+          <h2 class="js-reveal" data-delay="0.05">Ils l'ont <em>adoré</em></h2>
+        </div>
+        <div class="svc-reviews">
+          <article class="svc-review js-reveal">
+            <div class="svc-review__stars">★★★★★</div>
+            <p class="svc-review__quote">Nos invités ont adoré le photobooth. La qualité des tirages est incroyable et le décor était parfaitement raccord avec notre mariage.</p>
+            <div class="svc-review__author"><strong>Camille &amp; Julien</strong>Mariage · Fontainebleau</div>
+          </article>
+          <article class="svc-review js-reveal" data-delay="0.05">
+            <div class="svc-review__stars">★★★★★</div>
+            <p class="svc-review__quote">Une borne magnifique, très intuitive. L'assistant a mis tout le monde à l'aise. Le porte-clés en option a été le clou de la soirée.</p>
+            <div class="svc-review__author"><strong>Léa D.</strong>Soirée d'entreprise · Paris 8e</div>
+          </article>
+          <article class="svc-review js-reveal" data-delay="0.1">
+            <div class="svc-review__stars">★★★★★</div>
+            <p class="svc-review__quote">Réactivité au top, personnalisation soignée, et la galerie privée est un vrai plus. Je recommande les yeux fermés.</p>
+            <div class="svc-review__author"><strong>Marion R.</strong>Anniversaire · Versailles</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" style="background: var(--creme-30);">
+      <div class="page">
+        <div class="faq__grid">
+          <div class="faq__head">
+            <span class="eyebrow js-reveal">FAQ Photobooth</span>
+            <h2 class="js-reveal" data-delay="0.05">Vos <em>questions</em></h2>
+          </div>
+          <ul class="faq__list js-reveal">
+            <li class="faq__item"><button class="faq__q">Combien de temps pour l'installation ?<span class="faq__toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><div class="faq__a-inner">1 h avant le lancement de votre événement, en toute discrétion.</div></div></li>
+            <li class="faq__item"><button class="faq__q">Les impressions sont-elles illimitées ?<span class="faq__toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><div class="faq__a-inner">Pas forcément. Le nombre d'impressions dépend de la formule choisie et de votre demande. Cependant, dans la majorité des événements, nos clients optent pour des tirages illimités afin que chaque invité puisse repartir avec son souvenir.</div></div></li>
+            <li class="faq__item"><button class="faq__q">Peut-on personnaliser le template ?<span class="faq__toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><div class="faq__a-inner">Oui, aux couleurs, prénoms et date de votre événement. Validation avec vous en amont.</div></div></li>
+            <li class="faq__item"><button class="faq__q">Comment récupérer toutes les photos ?<span class="faq__toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><div class="faq__a-inner">Vous recevez le lendemain un lien vers une galerie privée avec toutes les photos HD, téléchargeables individuellement ou en zip.</div></div></li>
+            <li class="faq__item"><button class="faq__q">Quel espace faut-il prévoir ?<span class="faq__toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><div class="faq__a-inner">Environ 3 m × 2 m suffisent. Nous nous adaptons à la configuration de votre lieu.</div></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA DEVIS -->
+    <section class="section form-section" id="devis">
+      <div class="page">
+        <div class="form-section__head">
+          <span class="eyebrow js-reveal">Devis Photobooth</span>
+          <h2 class="js-reveal" data-delay="0.05">Réservons votre <em>date</em></h2>
+          <p class="js-reveal" data-delay="0.1">Réponse sous 24 h ouvrées.</p>
+        </div>
+        <div class="form-wrap js-reveal">
+          <form id="devis-form" action="https://formsubmit.co/ap.vision24@outlook.fr" method="POST">
+            <input type="hidden" name="_subject" value="Devis Photobooth — Vision" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="prestation" value="Photobooth" />
+            <div class="form-grid">
+              <div class="form-field"><label>Nom *</label><input name="nom" required /></div>
+              <div class="form-field"><label>Prénom *</label><input name="prenom" required /></div>
+              <div class="form-field"><label>Téléphone *</label><input name="telephone" type="tel" required /></div>
+              <div class="form-field"><label>Email *</label><input name="email" type="email" required /></div>
+              <div class="form-field"><label>Date *</label><input name="date" type="date" required /></div>
+              <div class="form-field"><label>Lieu</label><input name="lieu" /></div>
+              <div class="form-field form-field--full"><label>Message</label><textarea name="message" placeholder="Parlez-nous de votre événement…"></textarea></div>
+            </div>
+            <div class="form-submit"><button type="submit" class="btn btn--primary">Envoyer<span class="btn__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></button></div>
+          </form>
+          <div class="form-success" id="devis-success">
+            <div class="form-success__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <h3>Demande envoyée</h3><p style="color: var(--ink-70); margin-inline:auto;">Votre demande a bien été envoyée. Nous vous répondrons dans les plus brefs délais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="page">
+        <div class="footer__bottom" style="border: 0; padding-top: 0;">
+          <span>© <span id="year"></span> Vision</span>
+          <a href="../index.html">Retour à l'accueil</a>
+        </div>
+      </div>
+    </footer>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/form.js"></script>
+  </body>
+</html>

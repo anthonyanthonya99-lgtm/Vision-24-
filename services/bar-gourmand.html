@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bar Gourmand — Vision</title>
+    <meta name="description" content="Bar Gourmand Vision : sucré, salé, boissons chaudes avec latte art personnalisé. Prestation événementielle premium à Paris & partout en France." />
+    <meta name="theme-color" content="#560216" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23560216'/%3E%3Ctext x='50%25' y='58%25' font-family='Georgia,serif' font-size='34' font-style='italic' text-anchor='middle' fill='%23ede1d8'%3EV%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body>
+    <nav class="nav is-shown">
+      <a href="../index.html" class="nav__brand" aria-label="Vision — accueil">
+        <img src="../assets/img/logo-bordeaux.png" alt="Vision" class="nav__brand-img" onload="this.classList.add('is-loaded'); this.nextElementSibling.style.display='none';" />
+        <span class="nav__brand-text">Vision</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html#about">À propos</a></li>
+        <li><a href="../index.html#services">Prestations</a></li>
+        <li><a href="../index.html#bestsellers">Best Sellers</a></li>
+        <li><a href="../index.html#faq">FAQ</a></li>
+      </ul>
+      <a href="#devis" class="btn btn--primary nav__cta">Demander un devis<span class="btn__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+      <button class="nav__burger"><span></span></button>
+    </nav>
+    <div class="nav-overlay">
+      <ul class="nav-overlay__links">
+        <li><a href="../index.html#about">À propos</a></li>
+        <li><a href="../index.html#services">Prestations</a></li>
+        <li><a href="../index.html#bestsellers">Best Sellers</a></li>
+        <li><a href="../index.html#faq">FAQ</a></li>
+        <li><a href="#devis">Devis</a></li>
+      </ul>
+    </div>
+
+    <header class="svc-hero">
+      <div class="page svc-hero__inner">
+        <div class="svc-hero__breadcrumb"><a href="../index.html">Accueil</a> · Bar Gourmand</div>
+        <span class="hero__eyebrow hero-anim">Notre Nº 1</span>
+        <h1 class="hero-anim">Le <em>Bar Gourmand</em><br />moment <em>partage</em></h1>
+        <p class="svc-hero__sub hero-anim">
+          Sucré, salé, boissons chaudes signature. Un bar élégant avec parasol
+          macramé, éclairage LED, produits frais préparés à la minute. Le
+          point de rendez-vous incontournable de votre soirée.
+        </p>
+        <div class="hero__ctas hero-anim" style="margin-top: 2rem;">
+          <a href="#devis" class="btn btn--primary">Réserver<span class="btn__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+          <a href="#categories" class="btn btn--ghost btn--on-dark">Voir les catégories<span class="btn__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></span></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 3 UNIVERS -->
+    <section class="section" id="categories" style="background: var(--creme);">
+      <div class="page">
+        <div style="text-align: center; margin-bottom: var(--s-16); max-width: 640px; margin-inline: auto;">
+          <span class="eyebrow js-reveal">Trois univers</span>
+          <h2 class="js-reveal" data-delay="0.05">Composez votre <em>bar signature</em></h2>
+          <p class="js-reveal" data-delay="0.1" style="color: var(--ink-70); margin-inline: auto;">
+            Choisissez un univers ou combinez-les. Tarifs dégressifs à partir de 2 univers.
+          </p>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card js-reveal" style="text-align: center;">
+            <div style="aspect-ratio: 4/3; margin-bottom: 1rem; border-radius: 12px; overflow: hidden; background: var(--bordeaux-90);">
+              <img src="../assets/img/prestations/bar-gourmand/IMG_3871_copie.jpg" alt="Mini pancakes du bar sucré Vision" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:center;" />
+            </div>
+            <h3>Sucré</h3>
+            <p>Mini pancakes moelleux, gaufres croustillantes, crêpes dentelle, popcorn caramel, chocolats gourmands, sirops maison.</p>
+          </div>
+          <div class="feat-card js-reveal" data-delay="0.05" style="text-align: center;">
+            <div style="aspect-ratio: 4/3; margin-bottom: 1rem; border-radius: 12px; overflow: hidden; background: var(--bordeaux-90);">
+              <img src="../assets/img/prestations/bar-gourmand/IMG_3836_copie.jpg" alt="Hot-dogs artisanaux du bar salé Vision" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:center;" />
+            </div>
+            <h3>Salé</h3>
+            <p>Hot dogs artisanaux, garnitures fraîches, oignons frits, sauces signature maison, options végétariennes.</p>
+          </div>
+          <div class="feat-card js-reveal" data-delay="0.1" style="text-align: center;">
+            <div style="aspect-ratio: 4/3; margin-bottom: 1rem; border-radius: 12px; overflow: hidden; background: var(--bordeaux-90);">
+              <img src="../assets/img/prestations/bar-gourmand/photo-bar-gourmand.jpg" alt="Bar à café signature Vision avec latte art personnalisé" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:center;" />
+            </div>
+            <h3>Bar à café signature</h3>
+            <p>Latte art personnalisé imprimé sur la mousse : logo, portrait, message. Chaque tasse devient un souvenir photo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO ANNOTÉE DU BAR -->
+    <section class="section" style="background: var(--creme-30);">
+      <div class="page">
+        <div class="svc-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center;">
+          <div>
+            <span class="eyebrow js-reveal">Le bar Vision</span>
+            <h2 class="js-reveal" data-delay="0.05">Un objet <em>design</em>, pas une simple table</h2>
+            <p class="js-reveal" data-delay="0.1" style="color: var(--ink-70);">
+              Notre bar signature avec son parasol macramé, sa base éclairée
+              LED et son logo lumineux devient l'un des plus beaux éléments
+              de décor de votre soirée. Cliquez sur les points pour découvrir
+              chaque détail.
+            </p>
+            <ul class="svc-list js-reveal" data-delay="0.15" style="margin-top: var(--s-6);">
+              <li>Parasol macramé fait main</li>
+              <li>Éclairage LED chaleureux intégré</li>
+              <li>Logo Vision rétro-éclairé</li>
+              <li>Bar mobile sur roulettes, montage facile</li>
+              <li>Décoration florale & végétale incluse</li>
+              <li>Menu personnalisé aux couleurs de votre événement</li>
+            </ul>
+          </div>
+
+          <div class="annot-photo js-reveal" style="aspect-ratio: 3/4;">
+            <img src="../assets/img/prestations/bar-gourmand/IMG_3292.jpg" alt="Bar Gourmand Vision" />
+            <div class="annot" style="top: 20%; left: 55%;">
+              <span class="annot__dot"></span>
+              <span class="annot__label">Parasol macramé fait main — signature Vision</span>
+            </div>
+            <div class="annot" style="top: 42%; left: 28%;">
+              <span class="annot__dot"></span>
+              <span class="annot__label">Menu personnalisé à vos couleurs</span>
+            </div>
+            <div class="annot" style="top: 65%; left: 58%;">
+              <span class="annot__dot"></span>
+              <span class="annot__label">Logo Vision rétro-éclairé LED</span>
+            </div>
+            <div class="annot" style="top: 78%; left: 30%;">
+              <span class="annot__dot"></span>
+              <span class="annot__label">Base éclairée LED chaleureuse</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CE QUI EST INCLUS -->
+    <section class="section" style="background: var(--creme);">
+      <div class="page">
+        <div style="text-align: center; margin-bottom: var(--s-16);">
+          <span class="eyebrow js-reveal">Tout compris</span>
+          <h2 class="js-reveal" data-delay="0.05">Ce qu'on <em>apporte</em></h2>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card js-reveal">
+            <div class="feat-card__icon"><svg viewBox="0 0 24 24"><path d="M4 8h16v10a2 2 0 01-2 2H6a2 2 0 01-2-2V8z"/><path d="M8 8V6a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
+            <h3>Bar habillé signature</h3>
+            <p>Notre bar avec parasol, éclairage LED, logo, décor floral.</p>
+          </div>
+          <div class="feat-card js-reveal" data-delay="0.05">
+            <div class="feat-card__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M8 12h8M12 8v8"/></svg></div>
+            <h3>Produits frais du jour</h3>
+            <p>Approvisionnement le matin même. Zéro surgelé, zéro industriel.</p>
+          </div>
+          <div class="feat-card js-reveal" data-delay="0.1">
+            <div class="feat-card__icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <h3>Équipe dédiée en tenue</h3>
+            <p>Personnel formé, souriant, en tenue élégante coordonnée à votre événement.</p>
+          </div>
+          <div class="feat-card js-reveal" data-delay="0.15">
+            <div class="feat-card__icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg></div>
+            <h3>Menu personnalisé</h3>
+            <p>Design du menu à vos couleurs, prénoms ou logo affiché sur le bar.</p>
+          </div>
+          <div class="feat-card js-reveal" data-delay="0.2">
+            <div class="feat-card__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <h3>Vaisselle éco-premium</h3>
+            <p>Vaisselle jetable haut de gamme éco-responsable incluse. Porcelaine en option.</p>
+          </div>
+          <div class="feat-card js-reveal" data-delay="0.25">
+            <div class="feat-card__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <h3>Installation & rangement</h3>
+            <p>Prêt en 45 minutes, désinstallation complète. Vous n'avez rien à faire.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIE MASONRY -->
+    <section class="section" style="background: var(--creme-30);">
+      <div class="page">
+        <div style="text-align: center; margin-bottom: var(--s-12);">
+          <span class="eyebrow js-reveal">En situation</span>
+          <h2 class="js-reveal" data-delay="0.05">Le Bar Gourmand <em>en événement</em></h2>
+        </div>
+        <!-- Grande photo paysage en haut -->
+        <div class="svc-masonry__item js-reveal" style="margin-bottom: var(--s-4); border-radius: var(--radius); overflow: hidden; background: var(--bordeaux); box-shadow: 0 20px 40px -20px rgba(0,0,0,0.2);">
+          <img src="../assets/img/prestations/bar-gourmand/IMG_3907_copie.jpg" alt="Bar Gourmand Vision — vue d'ensemble" loading="lazy" style="display:block; width:100%; height:auto; object-fit:cover; object-position:center; transition: transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);" />
+        </div>
+
+        <!-- Grille 2 × 2 en dessous -->
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-4);">
+          <div class="js-reveal" data-delay="0.05" style="aspect-ratio: 4/3; border-radius: var(--radius); overflow: hidden; background: var(--bordeaux); box-shadow: 0 12px 30px -15px rgba(0,0,0,0.2);">
+            <img src="../assets/img/prestations/bar-gourmand/IMG_7641.jpg" alt="Bar Gourmand Vision en événement" loading="lazy" style="display:block; width:100%; height:100%; object-fit:cover; object-position:center; transition: transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);" />
+          </div>
+          <div class="js-reveal" data-delay="0.1" style="aspect-ratio: 4/3; border-radius: var(--radius); overflow: hidden; background: var(--bordeaux); box-shadow: 0 12px 30px -15px rgba(0,0,0,0.2);">
+            <img src="../assets/img/prestations/bar-gourmand/IMG_7642.jpg" alt="Bar Gourmand Vision en événement" loading="lazy" style="display:block; width:100%; height:100%; object-fit:cover; object-position:center; transition: transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);" />
+          </div>
+          <div class="js-reveal" data-delay="0.15" style="aspect-ratio: 4/3; border-radius: var(--radius); overflow: hidden; background: var(--bordeaux); box-shadow: 0 12px 30px -15px rgba(0,0,0,0.2);">
+            <img src="../assets/img/prestations/bar-gourmand/IMG_6149.jpg" alt="Bar Gourmand Vision en événement" loading="lazy" style="display:block; width:100%; height:100%; object-fit:cover; object-position:center; transition: transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);" />
+          </div>
+          <div class="js-reveal" data-delay="0.2" style="aspect-ratio: 4/3; border-radius: var(--radius); overflow: hidden; background: var(--bordeaux); box-shadow: 0 12px 30px -15px rgba(0,0,0,0.2);">
+            <img src="../assets/img/prestations/bar-gourmand/IMG_7180.jpg" alt="Bar Gourmand Vision en événement" loading="lazy" style="display:block; width:100%; height:100%; object-fit:cover; object-position:center; transition: transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVIS -->
+    <section class="section" style="background: var(--creme);">
+      <div class="page">
+        <div style="text-align: center; margin-bottom: var(--s-16);">
+          <span class="eyebrow js-reveal">Avis clients</span>
+          <h2 class="js-reveal" data-delay="0.05">Le Bar Gourmand <em>fait sensation</em></h2>
+        </div>
+        <div class="svc-reviews">
+          <article class="svc-review js-reveal">
+            <div class="svc-review__stars">★★★★★</div>
+            <p class="svc-review__quote">Le bar à café latte art avec notre logo a bluffé tous nos clients. Élégant, original, très professionnel. Une pause gourmande devenue le moment fort de notre soirée.</p>
+            <div class="svc-review__author"><strong>Léa D.</strong>Soirée d'entreprise · Paris 8e</div>
+          </article>
+          <article class="svc-review js-reveal" data-delay="0.05">
+            <div class="svc-review__stars">★★★★★</div>
+            <p class="svc-review__quote">Le Bar Gourmand a fait sensation à notre mariage ! Sucré + salé + café, tout était impeccable. L'équipe adorable, produits ultra frais.</p>
+            <div class="svc-review__author"><strong>Aurélie &amp; Karim</strong>Mariage · Sud de la France</div>
+          </article>
+          <article class="svc-review js-reveal" data-delay="0.1">
+            <div class="svc-review__stars">★★★★★</div>
+            <p class="svc-review__quote">Le bar avec le parasol macramé est magnifique. Nos invités ne quittaient plus le stand. À refaire les yeux fermés.</p>
+            <div class="svc-review__author"><strong>Sofia &amp; Marc</strong>Mariage · Chantilly</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" style="background: var(--creme-30);">
+      <div class="page">
+        <div class="faq__grid">
+          <div class="faq__head"><span class="eyebrow js-reveal">FAQ Bar Gourmand</span><h2 class="js-reveal" data-delay="0.05">Vos <em>questions</em></h2></div>
+          <ul class="faq__list js-reveal">
+            <li class="faq__item"><button class="faq__q">Peut-on combiner plusieurs univers ?<span class="faq__toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><div class="faq__a-inner">Oui, avec tarifs dégressifs à partir de 2 univers. Sucré + Bar à café est le combo phare.</div></div></li>
+            <li class="faq__item"><button class="faq__q">Comment fonctionne l'impression sur mousse ?<span class="faq__toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><div class="faq__a-inner">Une machine imprime au colorant alimentaire directement sur la mousse : logo, portrait, texte. Résultat en 3 secondes.</div></div></li>
+            <li class="faq__item"><button class="faq__q">Quelles allergies pouvez-vous gérer ?<span class="faq__toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><div class="faq__a-inner">Nous adaptons le menu : sans gluten, vegan, sans arachides. À signaler à la commande.</div></div></li>
+            <li class="faq__item"><button class="faq__q">Quel espace faut-il pour le bar ?<span class="faq__toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><div class="faq__a-inner">4 m × 2 m minimum, accès électrique standard. Nous prévoyons tout le reste.</div></div></li>
+            <li class="faq__item"><button class="faq__q">Combien de temps de service ?<span class="faq__toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><div class="faq__a-inner">Formules de 2 h, 3 h ou 4 h. Nous conseillons selon le nombre d'invités.</div></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEVIS -->
+    <section class="section form-section" id="devis">
+      <div class="page">
+        <div class="form-section__head">
+          <span class="eyebrow js-reveal">Devis Bar Gourmand</span>
+          <h2 class="js-reveal" data-delay="0.05">Composons votre <em>bar signature</em></h2>
+          <p class="js-reveal" data-delay="0.1">Réponse sous 24 h ouvrées.</p>
+        </div>
+        <div class="form-wrap js-reveal">
+          <form id="devis-form" action="https://formsubmit.co/ap.vision24@outlook.fr" method="POST">
+            <input type="hidden" name="_subject" value="Devis Bar Gourmand — Vision" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="prestation" value="Bar Gourmand" />
+            <div class="form-grid">
+              <div class="form-field"><label>Nom *</label><input name="nom" required /></div>
+              <div class="form-field"><label>Prénom *</label><input name="prenom" required /></div>
+              <div class="form-field"><label>Téléphone *</label><input name="telephone" type="tel" required /></div>
+              <div class="form-field"><label>Email *</label><input name="email" type="email" required /></div>
+              <div class="form-field"><label>Date *</label><input name="date" type="date" required /></div>
+              <div class="form-field"><label>Nombre d'invités</label><input name="invites" type="number" min="1" /></div>
+              <div class="form-field form-field--full">
+                <label>Univers souhaité(s)</label>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.3rem;">
+                  <label style="display:inline-flex; gap:0.4rem; align-items:center; padding:0.5rem 0.9rem; border:1px solid var(--line); border-radius:999px; cursor:pointer;">
+                    <input type="checkbox" name="univers" value="Sucré" /> Sucré
+                  </label>
+                  <label style="display:inline-flex; gap:0.4rem; align-items:center; padding:0.5rem 0.9rem; border:1px solid var(--line); border-radius:999px; cursor:pointer;">
+                    <input type="checkbox" name="univers" value="Salé" /> Salé
+                  </label>
+                  <label style="display:inline-flex; gap:0.4rem; align-items:center; padding:0.5rem 0.9rem; border:1px solid var(--line); border-radius:999px; cursor:pointer;">
+                    <input type="checkbox" name="univers" value="Bar à café" /> Bar à café
+                  </label>
+                </div>
+              </div>
+              <div class="form-field form-field--full"><label>Message</label><textarea name="message" placeholder="Ambiance, allergies, personnalisation…"></textarea></div>
+            </div>
+            <div class="form-submit"><button type="submit" class="btn btn--primary">Envoyer<span class="btn__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></button></div>
+          </form>
+          <div class="form-success" id="devis-success">
+            <div class="form-success__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <h3>Demande envoyée</h3><p style="color: var(--ink-70); margin-inline:auto;">Votre demande a bien été envoyée. Nous vous répondrons dans les plus brefs délais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="page">
+        <div class="footer__bottom" style="border: 0; padding-top: 0;">
+          <span>© <span id="year"></span> Vision</span>
+          <a href="../index.html">Retour à l'accueil</a>
+        </div>
+      </div>
+    </footer>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/form.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Dossiers sources (photos originales HEIC/PNG haute résolution)
+# Ces fichiers sont déjà convertis en JPG web dans assets/img/
+PHOTOBOOTH/
+BOX MAGAZINE/
+BAR GOURMAND png /
+FACADE /
+LOGO/
+360 VIDÉOBOOTH/
+VISUEL PHOTOBOOTH/
+
+# PDF de référence (usage interne uniquement)
+*.pdf
+
+# Fichiers média à la racine (originaux non utilisés directement par le site)
+/IMG_*.jpeg
+/IMG_*.jpg
+/IMG_*.PNG
+/IMG_*.png
+/IMG_*.heic
+/IMG_*.HEIC
+/ChatGPT Image*.png
+/ChatGPT Image*.jpg
+/post insta.png
+
+# Pages de sélection temporaires
+choix-photo-*.html
+
+# Fichiers isolés à la racine
+/@_*.JPG
+/@_*.jpg
+/*.zip
+
+# Config locale (peut contenir des clés API)
+.mcp.json
+.env
+.env.local
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs
+*.log
+npm-debug.log*
