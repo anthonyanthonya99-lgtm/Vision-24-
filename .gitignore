@@ -5,14 +5,14 @@
 .Trashes
 
 # Dossiers sources (photos originales HEIC/PNG haute résolution)
-# Ces fichiers sont déjà convertis en JPG web dans assets/img/
-PHOTOBOOTH/
-BOX MAGAZINE/
-BAR GOURMAND png /
-FACADE /
-LOGO/
-360 VIDÉOBOOTH/
-VISUEL PHOTOBOOTH/
+# UNIQUEMENT à la racine du projet — pas dans assets/img/
+/PHOTOBOOTH/
+/BOX MAGAZINE/
+/BAR GOURMAND png /
+/FACADE /
+/LOGO/
+/360 VIDÉOBOOTH/
+/VISUEL PHOTOBOOTH/
 
 # PDF de référence (usage interne uniquement)
 *.pdf
