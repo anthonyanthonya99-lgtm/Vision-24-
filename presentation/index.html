@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Vision 24 — Présentation des prestations</title>
+<link rel="icon" type="image/png" href="../assets/img/logo-bordeaux.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==================== PANIER (drawer) ==================== -->
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="cart-drawer-overlay" data-close-cart></div>
+  <div class="cart-drawer-panel">
+    <div class="cart-head">
+      <h3>Votre <em>panier</em></h3>
+      <button class="cart-close" data-close-cart aria-label="Fermer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty">
+      <p>Votre panier est vide.</p>
+      <span>Ajoutez une formule pour la réserver.</span>
+    </div>
+    <div class="cart-foot" id="cartFoot">
+      <div class="cart-total">
+        <div class="cart-total-row"><span>Total</span><strong id="cartTotal">0 €</strong></div>
+        <div class="cart-total-row cart-acompte"><span>Acompte 30 %</span><strong id="cartAcompte">0 €</strong></div>
+      </div>
+      <button class="btn cart-checkout" id="cartCheckout">
+        Envoyer ma demande
+        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+</aside>
+
+<!-- ==================== CHECKOUT (modal) ==================== -->
+<div class="checkout-modal" id="checkoutModal" aria-hidden="true">
+  <div class="checkout-overlay" data-close-checkout></div>
+  <div class="checkout-panel">
+    <button class="checkout-close" data-close-checkout aria-label="Fermer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="checkout-head">
+      <span class="eyebrow" id="checkoutStep">Étape 1 / 3</span>
+      <h2 id="checkoutTitle">Vos coordonnées</h2>
+      <p id="checkoutIntro">Nous vous répondons sous 24h.</p>
+    </div>
+    <form id="checkoutForm" class="checkout-form"
+          action="https://formsubmit.co/ap.vision24@outlook.fr" method="POST">
+      <input type="hidden" name="_subject" id="hiddenSubject" value="Nouvelle réservation — Vision 24">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_autoresponse" value="Bonjour, nous avons bien reçu votre demande de réservation Vision 24 et vous répondons sous 24 h avec la confirmation de votre date. À très vite ! — Anthony · Vision 24">
+      <input type="hidden" name="recap_commande" id="recapCommande">
+      <input type="hidden" name="total" id="hiddenTotal">
+      <input type="hidden" name="acompte" id="hiddenAcompte">
+      <input type="hidden" name="_next" value="https://formsubmit.co/thanks">
+      <div class="checkout-body" id="checkoutBody"></div>
+      <div class="checkout-actions">
+        <button type="button" class="btn btn-outline" id="checkoutPrev">Précédent</button>
+        <button type="button" class="btn" id="checkoutNext">Suivant
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </form>
+    <div class="checkout-success" id="checkoutSuccess">
+      <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg></div>
+      <h3>Demande envoyée</h3>
+      <p>Nous vous répondons sous 24 h avec notre <strong>RIB</strong> et votre <strong>contrat</strong> pour confirmer votre réservation.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== INTRO ==================== -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__inner">
+    <img class="intro__logo" src="../assets/img/logo-bordeaux.png" alt="Vision 24">
+    <span class="intro__tagline">Votre projet, notre vision</span>
+  </div>
+</div>
+
+<!-- ==================== NAV ==================== -->
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="#hero" class="nav-logo"><img src="../assets/img/logo-bordeaux.png" alt="Vision 24"></a>
+    <nav>
+      <ul class="nav-menu" id="menu">
+        <li><a href="#formules-v3">Nos Formules</a></li>
+        <li><a href="#photobooth">Photobooth</a></li>
+        <li><a href="#box">Box Magazine</a></li>
+        <li><a href="#videobooth">Vidéobooth 360</a></li>
+        <li><a href="#video">Captation</a></li>
+        <li><a href="#bars">Bars Gourmands</a></li>
+      </ul>
+    </nav>
+    <button class="nav-cart" id="navCart" aria-label="Panier">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <span class="nav-cart-count" id="navCartCount">0</span>
+    </button>
+    <button class="nav-burger" id="burger" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="hero">
+  <div class="container hero-inner">
+    <div class="hero-content reveal">
+      <span class="hero-eyebrow"><span class="dot"></span> Vision 24 · Catalogue Premium</span>
+      <h1>Formule<br><em>Vision 24</em></h1>
+      <p>Solutions événementielles haut de gamme — captation vidéo <em>mariage &amp; entreprise</em>, location de Photobooth, Vidéobooth 360°, Box Magazine et Bar Gourmand.</p>
+      <div class="hero-ctas">
+        <a href="#devis" class="btn">Réserver l'une de ces prestations
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#formules-v3" class="btn btn-outline">Découvrir nos formules</a>
+      </div>
+      <div class="hero-socials">
+        <span class="hero-socials-label">Retrouvez-nous</span>
+        <div class="hero-socials-row">
+          <a href="https://www.instagram.com/__vision24__/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.5 1s.8.9 1 1.5c.2.4.3 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3-.2.6-.5 1-1 1.5s-.9.8-1.5 1c-.4.2-1.1.3-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4-.6-.2-1-.5-1.5-1s-.8-.9-1-1.5c-.2-.4-.3-1.1-.4-2.3-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 1-1.5s.9-.8 1.5-1c.4-.2 1.1-.3 2.3-.4 1.2-.1 1.6-.1 4.8-.1zM12 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 10.2a4 4 0 110-8 4 4 0 010 8zm6.4-10.5a1.4 1.4 0 100 2.8 1.4 1.4 0 000-2.8z"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61586950779816&locale=fr_FR" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.2-1.5 1.5-1.5h1.6V3.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.7V13h2.7v8h3.1z"/></svg>
+            <span>Facebook</span>
+          </a>
+          <a href="https://www.tiktok.com/@__vision24__?_r=1&_t=ZN-989IR5186XG" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 8.5c-1.5 0-2.9-.6-3.9-1.5v7.4c0 3.4-2.7 6.1-6.1 6.1S2.9 17.8 2.9 14.4s2.7-6.1 6.1-6.1c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.1-.9-.1-1.7 0-3.1 1.4-3.1 3.1s1.4 3.1 3.1 3.1 3.1-1.4 3.1-3.1V2h3c.1 2.4 2 4.4 4.4 4.4v2.1H19z"/></svg>
+            <span>TikTok</span>
+          </a>
+          <a href="https://www.linkedin.com/company/vision24-studio/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V9h3v10zM6.5 7.7a1.7 1.7 0 110-3.5 1.7 1.7 0 010 3.5zM19 19h-3v-5c0-1.2-.5-2-1.5-2-1 0-1.5.7-1.5 2v5h-3V9h3v1.5c.5-.8 1.4-1.5 3-1.5 2.2 0 3 1.5 3 4v6z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual reveal reveal-delay-2">
+      <img src="../assets/img/prestations/hero-logo.jpg" alt="Vision 24">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FORMULES V3 (dark warm — DA Vision 24) ==================== -->
+<section class="section-dark packs-warm" id="formules-v3">
+  <div class="ornaments" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Édition Vision 24</span>
+      <h2>Formules <em>signature</em></h2>
+      <p>Quatre univers pensés comme des expériences complètes — orchestrés avec soin, image après image.</p>
+      <div class="section-divider"><span></span></div>
+    </div>
+
+    <div class="video-grid packs-grid-signature">
+
+      <article class="video-card reveal">
+        <div class="video-tag">Le plus populaire</div>
+        <div class="video-head">
+          <h4>Essentiel</h4>
+          <p class="video-sub">Pack 01</p>
+          <div class="video-price">
+            <span class="cur">€</span><span class="val" data-price="packs.pack1">—</span>
+          </div>
+        </div>
+        <div class="video-media video-media-split">
+          <img src="../assets/img/prestations/box-magazine/paulsmith-149.jpg" alt="Box Magazine">
+          <img src="../assets/img/prestations/photobooth/IMG_2461.jpg" alt="Photobooth">
+        </div>
+        <div class="video-accordion">
+          <details>
+            <summary>Box Magazine personnalisée<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li><b>3 h d'animation</b></li>
+              <li>Cabine immersive aux couleurs de votre événement</li>
+              <li>Vos invités en couverture de magazine</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Photobooth premium<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li><b>3 h d'animation</b></li>
+              <li>Borne photo premium</li>
+              <li>Tirages illimités</li>
+              <li>Création des visuels sur les impressions</li>
+              <li>Façade sur-mesure par notre wedding designer</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Porte-clés personnalisés<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li>Atelier créatif installé sur place</li>
+              <li>Vos invités fabriquent leur propre porte-clés</li>
+              <li>Large choix de <b>couleurs en cuir</b> premium</li>
+              <li>Souvenir 100% personnalisé à emporter</li>
+              <li><b>Inclus pour 30 personnes</b> — au-delà : supplément</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+
+      <article class="video-card popular-alt reveal reveal-delay-1">
+        <div class="video-tag video-tag-alt">Le plus populaire</div>
+        <div class="video-head">
+          <h4>Immersion 360°</h4>
+          <p class="video-sub">Pack 02</p>
+          <div class="video-price">
+            <span class="cur">€</span><span class="val" data-price="packs.pack4">—</span>
+          </div>
+        </div>
+        <div class="video-media video-media-split video-media-split-3">
+          <img src="../assets/img/prestations/box-magazine/paulsmith-149.jpg" alt="Box Magazine">
+          <img src="../assets/img/prestations/photobooth/IMG_2461.jpg" alt="Photobooth">
+          <img src="../assets/img/prestations/videobooth-360/IMG_7561.jpg" alt="Vidéobooth 360°">
+        </div>
+        <div class="video-accordion">
+          <details>
+            <summary>Vidéobooth 360°<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li><b>3 h d'animation</b></li>
+              <li>Plateforme rotative cinéma</li>
+              <li>Vidéo ralenti verticale</li>
+              <li>Montage instantané pour les réseaux</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Photobooth premium<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li><b>3 h d'animation</b></li>
+              <li>Borne photo premium</li>
+              <li>Tirages illimités</li>
+              <li>Création des visuels sur les impressions</li>
+              <li>Façade sur-mesure par notre wedding designer</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Box Magazine personnalisée<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li><b>3 h d'animation</b></li>
+              <li>Cabine immersive à votre thème</li>
+              <li>Vos invités en couverture magazine</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+
+      <article class="video-card featured reveal reveal-delay-2">
+        <div class="video-tag">Le plus populaire</div>
+        <div class="video-head">
+          <h4>Signature Mariage</h4>
+          <p class="video-sub">Pack 03</p>
+          <div class="video-price">
+            <span class="cur">€</span><span class="val" data-price="packs.pack2">—</span>
+          </div>
+        </div>
+        <div class="video-media"><img src="../assets/img/prestations/pack-signature-mariage.png" alt="Pack Signature Mariage — Captation + Photobooth + Souvenirs"></div>
+        <div class="video-accordion">
+          <details>
+            <summary>Captation vidéo mariage<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li>Vidéaste professionnel dédié</li>
+              <li>Tournage en <b>4K</b></li>
+              <li>Prises de son professionnelles</li>
+              <li>Montage cinéma livré prêt à diffuser</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Teaser vertical<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li>Format vertical réseaux sociaux</li>
+              <li>Court format bande-annonce</li>
+              <li>Prêt à partager Instagram &amp; TikTok</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Prises de vue drone<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li>Vues aériennes cinéma</li>
+              <li>Pilote certifié DGAC</li>
+              <li>Cadrages signature Vision 24</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Photobooth premium<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li><b>3 h d'animation</b></li>
+              <li>Borne photo premium installée dès le cocktail</li>
+              <li>Tirages illimités</li>
+              <li>Création des visuels sur les impressions</li>
+              <li>Façade sur-mesure par notre wedding designer</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+
+      <article class="video-card reveal reveal-delay-3">
+        <div class="video-tag">Le plus populaire</div>
+        <div class="video-head">
+          <h4>Prestige Complet</h4>
+          <p class="video-sub">Pack 04</p>
+          <div class="video-price">
+            <span class="cur">€</span><span class="val" data-price="packs.pack3">—</span>
+          </div>
+        </div>
+        <div class="video-media"><img src="../assets/img/prestations/pack-prestige.png" alt="Pack Prestige — DJ + Vidéaste + Soirée événementielle"></div>
+        <div class="video-accordion">
+          <details>
+            <summary>Captation vidéo<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li>Vidéaste professionnel dédié</li>
+              <li>Tournage en <b>4K</b></li>
+              <li>Prises de son professionnelles</li>
+              <li>Montage éditorial livré prêt à diffuser</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Teaser vertical<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li>Format vertical réseaux sociaux</li>
+              <li>Court format bande-annonce</li>
+              <li>Prêt à partager Instagram &amp; TikTok</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Prises de vue drone<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li>Vues aériennes signature</li>
+              <li>Pilote certifié DGAC</li>
+              <li>Cadrages cinématographiques</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Photobooth premium<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li><b>3 h d'animation</b></li>
+              <li>Borne photo premium</li>
+              <li>Tirages illimités</li>
+              <li>Création des visuels sur les impressions</li>
+              <li>Façade sur-mesure par notre wedding designer</li>
+            </ul>
+          </details>
+          <details>
+            <summary>DJ professionnel<span class="chev">+</span></summary>
+            <ul class="detail-list">
+              <li>DJ expérimenté événementiel</li>
+              <li>Matériel son &amp; lumière pro</li>
+              <li>Playlist co-construite avec vous</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PHOTOBOOTH ==================== -->
+<section class="section-alt" id="photobooth">
+  <div class="container">
+    <div class="split reverse reveal">
+      <div class="split-media"><img src="../assets/img/prestations/photobooth/IMG_2461.jpg" alt="Photobooth Vision 24"></div>
+      <div>
+        <span class="section-head eyebrow" style="display:inline-block;margin:0 0 18px">Prestation individuelle</span>
+        <h2 style="font-size:clamp(38px,4.5vw,60px);margin-bottom:18px">Photobooth</h2>
+        <p style="color:var(--muted);font-size:17px;max-width:520px;margin:0 0 40px">
+          Une borne photo premium, des tirages instantanés et un design éditorial signé Vision 24. Vos invités repartent avec un souvenir immédiat, haut de gamme.
+        </p>
+
+        <div class="presta-grid">
+          <div class="presta-card">
+            <span class="cat">Formule</span>
+            <h4>3 heures</h4>
+            <p class="desc">Idéal pour un cocktail ou une soirée courte.</p>
+            <div class="price" data-price="photobooth.h3">—<small>Prestation</small></div>
+          </div>
+          <div class="presta-card popular">
+            <span class="cat">Formule</span>
+            <h4>4 heures</h4>
+            <p class="desc">La durée la plus demandée pour couvrir vos temps forts.</p>
+            <div class="price" data-price="photobooth.h4">—<small>Prestation</small></div>
+          </div>
+          <div class="presta-card">
+            <span class="cat">Formule</span>
+            <h4>Journée</h4>
+            <p class="desc">De la cérémonie à la piste de danse.</p>
+            <div class="price" data-price="photobooth.journee">—<small>Prestation</small></div>
+          </div>
+          <div class="presta-card">
+            <span class="cat">Formule</span>
+            <h4>Week-end</h4>
+            <p class="desc">Deux jours d'événement, une expérience continue.</p>
+            <div class="price" data-price="photobooth.weekend">—<small>Prestation</small></div>
+          </div>
+          <div class="presta-card option">
+            <span class="cat">Option</span>
+            <h4>Porte-clés personnalisés</h4>
+            <p class="desc">Atelier créatif sur place — porte-clés en cuir, toutes couleurs.</p>
+            <div class="price" data-price="photobooth.porteCles">—<small>Option</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BOX MAGAZINE ==================== -->
+<section id="box">
+  <div class="container">
+    <div class="split reveal">
+      <div class="split-media"><img src="../assets/img/prestations/box-magazine/paulsmith-149.jpg" alt="Box Magazine Vision 24"></div>
+      <div>
+        <span class="section-head eyebrow" style="display:inline-block;margin:0 0 18px">Prestation individuelle</span>
+        <h2 style="font-size:clamp(38px,4.5vw,60px);margin-bottom:18px">Box Magazine</h2>
+        <p style="color:var(--muted);font-size:17px;max-width:520px;margin:0 0 40px">
+          Une cabine immersive dont la façade reproduit une véritable couverture de magazine, entièrement personnalisée aux couleurs et au thème de votre événement. Vos invités entrent, se prennent eux-mêmes en photo et repartent avec des clichés originaux façon « Une de magazine ».
+        </p>
+
+        <div class="presta-grid">
+          <div class="presta-card">
+            <span class="cat">Formule</span><h4>3 heures</h4>
+            <p class="desc">Idéal pour un cocktail ou une soirée courte.</p>
+            <div class="price" data-price="boxMagazine.h3">—<small>Prestation</small></div>
+          </div>
+          <div class="presta-card popular">
+            <span class="cat">Formule</span><h4>4 heures</h4>
+            <p class="desc">La durée la plus demandée pour couvrir vos temps forts.</p>
+            <div class="price" data-price="boxMagazine.h4">—<small>Prestation</small></div>
+          </div>
+          <div class="presta-card">
+            <span class="cat">Formule</span><h4>Journée</h4>
+            <p class="desc">De la cérémonie à la piste de danse.</p>
+            <div class="price" data-price="boxMagazine.journee">—<small>Prestation</small></div>
+          </div>
+          <div class="presta-card">
+            <span class="cat">Formule</span><h4>Week-end</h4>
+            <p class="desc">Deux jours d'événement, une expérience continue.</p>
+            <div class="price" data-price="boxMagazine.weekend">—<small>Prestation</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== VIDÉOBOOTH 360 ==================== -->
+<section class="section-alt" id="videobooth">
+  <div class="container">
+    <div class="split reverse reveal">
+      <div class="split-media"><img src="../assets/img/prestations/videobooth-360/IMG_7499.jpg" alt="Vidéobooth 360"></div>
+      <div>
+        <span class="section-head eyebrow" style="display:inline-block;margin:0 0 18px">Prestation individuelle</span>
+        <h2 style="font-size:clamp(38px,4.5vw,60px);margin-bottom:18px">Vidéobooth 360°</h2>
+        <p style="color:var(--muted);font-size:17px;max-width:520px;margin:0 0 40px">
+          Une plateforme rotative, une caméra ralenti, un montage vertical instantané prêt pour les réseaux. L'effet wow assuré à chaque événement.
+        </p>
+
+        <div class="presta-grid">
+          <div class="presta-card popular">
+            <span class="cat">Formule</span><h4>3 heures</h4>
+            <p class="desc">Format événement court, énergie garantie.</p>
+            <div class="price" data-price="videobooth.h3">—<small>Prestation</small></div>
+          </div>
+          <div class="presta-card">
+            <span class="cat">Formule</span><h4>4 heures</h4>
+            <p class="desc">Le format signature Vision 24.</p>
+            <div class="price" data-price="videobooth.h4">—<small>Prestation</small></div>
+          </div>
+          <div class="presta-card">
+            <span class="cat">Formule</span><h4>Journée</h4>
+            <p class="desc">De l'apéritif jusqu'à la fin de soirée.</p>
+            <div class="price" data-price="videobooth.journee">—<small>Prestation</small></div>
+          </div>
+          <div class="presta-card">
+            <span class="cat">Formule</span><h4>Week-end</h4>
+            <p class="desc">Deux jours d'immersion cinématographique.</p>
+            <div class="price" data-price="videobooth.weekend">—<small>Prestation</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BARS GOURMANDS ==================== -->
+<section class="section-dark" id="bars">
+  <div class="container">
+    <div class="section-head reveal bars-section-head">
+      <span class="eyebrow">Bars gourmands</span>
+      <h2>Le goût de <em>l'événementiel</em></h2>
+      <p>Notre bar mobile et nos spécialités préparées en direct — une expérience gourmande signature Vision 24.</p>
+      <div class="section-divider"><span></span></div>
+    </div>
+
+    <!-- INTRO — Présentation de notre bar -->
+    <div class="bars-intro reveal">
+      <div class="bars-intro-photo">
+        <img src="../assets/img/prestations/bar-gourmand/IMG_3292.jpg" alt="Notre bar mobile Vision 24">
+      </div>
+      <div class="bars-intro-text">
+        <h3>Tout préparé <em>sur place, sur-mesure</em></h3>
+        <p>Notre équipe se déplace, monte, cuisine en direct devant vos invités et démonte à la fin. Chaque prestation est composée sur-mesure selon vos envies — sucré, salé ou boissons chaudes personnalisées.</p>
+        <p>Une expérience gourmande unique, entièrement pensée pour votre événement.</p>
+      </div>
+    </div>
+
+    <!-- FORMULE BRUNCH EN AVANT -->
+    <div class="bars-full reveal">
+      <div class="bars-full-head">
+        <span class="section-head eyebrow bars-eyebrow-warm bars-eyebrow-xl">Nos univers</span>
+      </div>
+      <div>
+        <div class="presta-grid bars-presta-grid bars-presta-grid-3">
+          <div class="presta-card has-photo">
+            <div class="presta-photo"><img src="../assets/img/prestations/bar-gourmand/ph5.png" alt="Bar à boisson chaude"></div>
+            <div class="presta-body">
+              <span class="cat">Boisson chaude</span>
+              <h4>Boisson personnalisée</h4>
+              <p class="desc">Impression logo sur la mousse — café, chocolat, cappuccino.</p>
+              <div class="price" data-price="bars.complet">—<small>par personne</small></div>
+            </div>
+          </div>
+          <div class="presta-card has-photo">
+            <div class="presta-photo"><img src="../assets/img/prestations/bar-gourmand/IMG_3871_copie.jpg" alt="Mini pancakes"></div>
+            <div class="presta-body">
+              <span class="cat">Sucré</span>
+              <h4>Mini pancakes</h4>
+              <p class="desc">Préparés minute, garnitures sur-mesure, boîtes en carton.</p>
+              <div class="price" data-price="bars.pancakes">—<small>par personne</small></div>
+            </div>
+          </div>
+          <div class="presta-card has-photo">
+            <div class="presta-photo"><img src="../assets/img/prestations/bar-gourmand/ph3.png" alt="Gaufres maison"></div>
+            <div class="presta-body">
+              <span class="cat">Sucré</span>
+              <h4>Gaufres maison</h4>
+              <p class="desc">Pâte maison, sucre perlé de Belgique, toppings sur-mesure.</p>
+              <div class="price" data-price="bars.gaufres">—<small>par personne</small></div>
+            </div>
+          </div>
+          <div class="presta-card has-photo">
+            <div class="presta-photo"><img src="../assets/img/prestations/bar-gourmand/ph4.png" alt="Mini crêpes"></div>
+            <div class="presta-body">
+              <span class="cat">Sucré</span>
+              <h4>Mini crêpes</h4>
+              <p class="desc">Cuisson minute, format finger food, salé & sucré au choix.</p>
+              <div class="price" data-price="bars.crepes">—<small>par personne</small></div>
+            </div>
+          </div>
+          <div class="presta-card has-photo">
+            <div class="presta-photo"><img src="../assets/img/prestations/bar-gourmand/ph6.png" alt="Popcorn"></div>
+            <div class="presta-body">
+              <span class="cat">Sucré</span>
+              <h4>Popcorn</h4>
+              <p class="desc">Sucré, salé, caramel — boîtes signature Vision 24.</p>
+              <div class="price" data-price="bars.popcorn">—<small>par personne</small></div>
+            </div>
+          </div>
+          <div class="presta-card has-photo">
+            <div class="presta-photo"><img src="../assets/img/prestations/bar-gourmand/ph2.png" alt="Hot-dogs"></div>
+            <div class="presta-body">
+              <span class="cat">Salé</span>
+              <h4>Hot-dogs</h4>
+              <p class="desc">Pain brioché, saucisse à hot-dog, oignons frits et sauce au choix.</p>
+              <div class="price" data-price="bars.hotdogs">—<small>par personne</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="brunch-cta reveal brunch-cta-highlight">
+      <div class="brunch-inner">
+        <div class="brunch-visual">
+          <img src="../assets/img/prestations/bar-gourmand/IMG_3886_copie.jpg" alt="Formule Brunch sucré Vision 24">
+        </div>
+        <div class="brunch-content">
+          <span class="eyebrow">Notre formule signature</span>
+          <h3>Brunch <em>sucré</em></h3>
+          <p>Trois univers gourmands réunis pour un moment sucré signature Vision 24.</p>
+          <ul class="brunch-list">
+            <li>Bar à boissons chaudes personnalisées <span>impression logo sur la mousse</span></li>
+            <li>Mini pancakes <span>préparés minute, garnitures sur-mesure</span></li>
+            <li>Gaufres maison <span>pâte maison, sucre perlé de Belgique</span></li>
+          </ul>
+          <div class="brunch-foot">
+            <div class="brunch-price">
+              <span class="cur">à partir de</span>
+              <span class="val" data-price="bars.brunch">—</span>
+            </div>
+            <a href="#devis" class="btn">
+              Demande de devis
+              <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu sur-mesure -->
+    <div class="brunch-custom reveal">
+      <div>
+        <span class="brunch-custom-label">Envie d'un menu personnalisé ?</span>
+        <p>Composez votre propre formule sur-mesure selon vos envies et le nombre d'invités.</p>
+      </div>
+      <a href="#devis" class="btn brunch-custom-btn">
+        Menu sur-mesure · Demande de devis
+        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+
+
+
+  </div>
+</section>
+
+<!-- ==================== CAPTATION VIDÉO ==================== -->
+<section id="video" class="video-section">
+
+  <div class="container">
+    <div class="section-head reveal bars-section-head video-section-head">
+      <span class="eyebrow">Prestation sur-mesure</span>
+      <h2>Chaque film, un projet <em>unique</em></h2>
+      <p>Nous ne travaillons pas par formules figées. Chaque captation est étudiée avec vous — durée, ambiance, prestations et livrables — pour un devis 100% adapté à votre événement.</p>
+      <div class="section-divider"><span></span></div>
+    </div>
+
+    <!-- Présentation vidéaste + capacités -->
+    <div class="video-intro reveal">
+      <div class="video-intro-photo">
+        <img src="../assets/img/prestations/anthony-videaste.jpg" alt="Anthony · Vidéaste Vision 24">
+      </div>
+      <div class="video-intro-text">
+        <span class="eyebrow-warm-dark">Notre expertise</span>
+        <h3>Vidéaste professionnel <em>dédié</em></h3>
+        <p>Tournage en 4K avec matériel cinéma, prises de vue drone par pilote certifié DGAC, montage éditorial signé Vision 24. Nous maîtrisons chaque étape de la production pour livrer un film à la hauteur de votre événement.</p>
+        <ul class="video-intro-list">
+          <li>Vidéaste professionnel dédié</li>
+          <li>Tournage 4K stabilisé</li>
+          <li>Drone — pilote certifié DGAC</li>
+          <li>Montage cinéma & étalonnage</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="video-values reveal">
+      <div class="vv-item">
+        <div class="vv-num">01</div>
+        <h4>Mariage</h4>
+        <p>Reportage cinéma de votre journée, film complet et teaser vertical pour les réseaux.</p>
+      </div>
+      <div class="vv-item">
+        <div class="vv-num">02</div>
+        <h4>Entreprise</h4>
+        <p>Films institutionnels, aftermovies, reportages événementiels, contenus corporate.</p>
+      </div>
+      <div class="vv-item">
+        <div class="vv-num">03</div>
+        <h4>Événement</h4>
+        <p>Anniversaires, soirées privées, lancements produits, séminaires — tous formats.</p>
+      </div>
+    </div>
+
+
+
+    <div class="video-cta reveal">
+      <div class="video-cta-inner">
+        <div>
+          <span class="eyebrow">Sur mesure</span>
+          <h3>Parlons de votre <em>projet</em></h3>
+          <p>Racontez-nous votre événement — nous vous répondons sous 24 h avec un devis 100% personnalisé.</p>
+        </div>
+        <a href="#devis" class="btn">
+          Demande de devis
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DEVIS / RÉSERVATION ==================== -->
+<section class="section-dark" id="devis">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Devis gratuit</span>
+      <h2>Réservez votre <em>prestation</em></h2>
+      <p>Parlez-nous de votre événement, nous vous répondons sous 24 à 48h.</p>
+    </div>
+
+    <form class="devis-form reveal"
+          action="https://formsubmit.co/ap.vision24@outlook.fr"
+          method="POST">
+      <input type="hidden" name="_subject" value="Nouvelle demande de devis — Vision 24 (Présentation)">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="devis-grid">
+        <label><span>Nom *</span><input type="text" name="nom" required autocomplete="family-name"></label>
+        <label><span>Prénom *</span><input type="text" name="prenom" required autocomplete="given-name"></label>
+        <label><span>Entreprise (facultatif)</span><input type="text" name="entreprise" autocomplete="organization"></label>
+        <label><span>Téléphone *</span><input type="tel" name="telephone" required autocomplete="tel"></label>
+        <label class="full"><span>Email *</span><input type="email" name="email" required autocomplete="email"></label>
+        <label><span>Date de l'événement *</span><input type="date" name="date" required></label>
+        <label><span>Lieu</span><input type="text" name="lieu" placeholder="Ville, département"></label>
+        <label><span>Nombre d'invités</span><input type="number" name="invites" min="1" placeholder="Ex. 120"></label>
+        <label>
+          <span>Type d'événement *</span>
+          <select name="type_evenement" required>
+            <option value="">Choisir…</option>
+            <option>Mariage</option>
+            <option>Anniversaire</option>
+            <option>Soirée d'entreprise</option>
+            <option>Séminaire / Team-building</option>
+            <option>Lancement produit</option>
+            <option>Autre</option>
+          </select>
+        </label>
+
+        <div class="full">
+          <span class="lbl">Type de client *</span>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="type_client" value="Particulier" required> Particulier</label>
+            <label class="chip"><input type="radio" name="type_client" value="Professionnel"> Professionnel</label>
+          </div>
+        </div>
+
+        <div class="full">
+          <span class="lbl">Prestations souhaitées</span>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="prestations" value="Photobooth"> Photobooth</label>
+            <label class="chip"><input type="checkbox" name="prestations" value="Vidéobooth 360"> Vidéobooth 360°</label>
+            <label class="chip"><input type="checkbox" name="prestations" value="Box Magazine"> Box Magazine</label>
+            <label class="chip"><input type="checkbox" name="prestations" value="Captation vidéo"> Captation vidéo</label>
+            <label class="chip"><input type="checkbox" name="prestations" value="Bar Gourmand"> Bar Gourmand</label>
+          </div>
+        </div>
+
+        <label class="full">
+          <span>Message</span>
+          <textarea name="message" rows="4" placeholder="Racontez-nous votre projet, vos envies, votre ambiance…"></textarea>
+        </label>
+      </div>
+
+      <div class="devis-submit">
+        <button type="submit" class="btn">
+          Envoyer ma demande
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="devis-note">Vos données restent confidentielles. Réponse sous 24 à 48h.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="container">
+    <img src="../assets/img/logo-creme.png" alt="Vision 24">
+    <p>Vision 24 — Événementiel premium</p>
+    <p class="fine">Catalogue commercial · Prix hors options sur-mesure</p>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script>
+  /* --- Intro premium --- */
+  (function(){
+    const intro = document.getElementById('intro');
+    if (!intro) return;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.body.style.overflow = 'hidden';
+    const total = reduced ? 400 : 2400;
+    setTimeout(() => {
+      intro.classList.add('is-done');
+      document.body.style.overflow = '';
+    }, total);
+  })();
+
+  /* --- Badges spécifiques Formules Signature (v3) --- */
+  (function(){
+    const labels = ["Pack 01", "Pack 02", "Pack 03", "Pack 04"]; // Essentiel · Immersion · Signature Mariage · Prestige Complet
+    // Mapping index dans la grille → clé du packMeta (car l'ordre visuel ≠ ordre logique)
+    const cardKeys = ["pack1", "pack4", "pack2", "pack3"]; // Essentiel, Immersion, Signature Mariage, Prestige
+    document.querySelectorAll('#formules-v3 .video-card').forEach((card, i) => {
+      const tag = card.querySelector('.video-tag');
+      if (tag && labels[i]) tag.textContent = labels[i];
+
+      const packKey = cardKeys[i];
+      card.dataset.packKey = packKey;
+
+      // Bouton "Ajouter au panier"
+      const wrap = document.createElement('div');
+      wrap.className = 'pack-cta-wrap';
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'btn pack-cta';
+      btn.innerHTML = 'Réserver cette formule <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+      btn.addEventListener('click', () => {
+        window.VISION24_CART && window.VISION24_CART.add(packKey);
+      });
+      wrap.appendChild(btn);
+      card.appendChild(wrap);
+    });
+  })();
+
+  /* --- Injection des prix depuis config.js --- */
+  document.querySelectorAll('[data-price]').forEach(el => {
+    const path = el.getAttribute('data-price').split('.');
+    let val = window.VISION24_CONFIG;
+    path.forEach(k => { val = val && val[k]; });
+    if (val) {
+      const small = el.querySelector('small');
+      el.innerHTML = val;
+      if (small) el.appendChild(small);
+    }
+  });
+
+  /* --- Nav scroll --- */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  /* --- Burger mobile --- */
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  burger.addEventListener('click', () => menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  /* --- Reveal on scroll --- */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* --- Carousel Hero --- */
+  (function(){
+    const slidesEl = document.getElementById('heroSlides');
+    if (!slidesEl) return;
+    const slides = [...slidesEl.querySelectorAll('.hero-slide')];
+    const dotsEl = document.getElementById('heroDots');
+    const prev = document.getElementById('heroPrev');
+    const next = document.getElementById('heroNext');
+    let idx = 0, timer;
+
+    slides.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.setAttribute('aria-label', 'Slide ' + (i+1));
+      if (i === 0) b.classList.add('is-active');
+      b.addEventListener('click', () => go(i));
+      dotsEl.appendChild(b);
+    });
+    const dots = [...dotsEl.querySelectorAll('button')];
+
+    function go(n){
+      slides[idx].classList.remove('is-active');
+      dots[idx].classList.remove('is-active');
+      idx = (n + slides.length) % slides.length;
+      slides[idx].classList.add('is-active');
+      dots[idx].classList.add('is-active');
+      restart();
+    }
+    function restart(){ clearInterval(timer); timer = setInterval(() => go(idx + 1), 5000); }
+    prev.addEventListener('click', () => go(idx - 1));
+    next.addEventListener('click', () => go(idx + 1));
+    restart();
+  })();
+
+  /* --- Bar hero : swap image au survol/clic sur les spécialités --- */
+  (function(){
+    const hero = document.getElementById('barsHero');
+    if (!hero) return;
+    const heroImg = document.getElementById('barsHeroImg');
+    const heroEye = document.getElementById('barsHeroEyebrow');
+    const heroTit = document.getElementById('barsHeroTitle');
+    const heroPri = document.getElementById('barsHeroPrice');
+    const defImg = hero.dataset.defaultImg;
+    const defTit = hero.dataset.defaultTitle;
+    const defEye = hero.dataset.defaultEyebrow;
+
+    const hint = document.getElementById('barsHeroHint');
+    const info = document.getElementById('barsHeroInfo');
+    const desc = document.getElementById('barsHeroDesc');
+    const advs = document.getElementById('barsHeroAdvs');
+    function setHero(d){
+      const priceKey = d.dataset.priceKey;
+      let price = "";
+      if (priceKey) {
+        const path = priceKey.split('.');
+        let v = window.VISION24_CONFIG;
+        path.forEach(k => { v = v && v[k]; });
+        if (v) price = v;
+      }
+      heroImg.src = d.dataset.img;
+      heroEye.textContent = d.dataset.cat || defEye;
+      heroTit.textContent = d.dataset.title || defTit;
+      heroPri.textContent = price;
+      if (desc) desc.textContent = d.dataset.desc || "";
+      if (advs) {
+        advs.innerHTML = "";
+        (d.dataset.advs || "").split("|").filter(Boolean).forEach(t => {
+          const li = document.createElement("li");
+          li.textContent = t.trim();
+          advs.appendChild(li);
+        });
+      }
+      hero.classList.add('is-active');
+      if (info) info.classList.add('show');
+      if (hint) hint.classList.add('hidden');
+      document.querySelectorAll('.bar-cat details').forEach(x => x.classList.remove('is-focused'));
+      d.classList.add('is-focused');
+    }
+    function reset(){
+      heroImg.src = defImg;
+      heroEye.textContent = defEye;
+      heroTit.textContent = defTit;
+      heroPri.textContent = "";
+      if (desc) desc.textContent = "";
+      if (advs) advs.innerHTML = "";
+      hero.classList.remove('is-active');
+      if (info) info.classList.remove('show');
+      if (hint) hint.classList.remove('hidden');
+      document.querySelectorAll('.bar-cat details').forEach(x => x.classList.remove('is-focused'));
+    }
+
+    document.querySelectorAll('.bar-cat details').forEach(d => {
+      d.addEventListener('mouseenter', () => setHero(d));
+      d.addEventListener('click', () => setHero(d));
+      d.addEventListener('focusin', () => setHero(d));
+    });
+    document.querySelector('.bars-cats')?.addEventListener('mouseleave', reset);
+  })();
+
+  /* ==================== PANIER + CHECKOUT ==================== */
+  (function(){
+    const CFG = window.VISION24_CONFIG || {};
+    const PACKS = CFG.packMeta || {};
+    const ACOMPTE = (CFG.paiement && CFG.paiement.acomptePourcent) || 30;
+    const STRIPE = (CFG.paiement && CFG.paiement.stripeLinks) || {};
+    const STORAGE = "vision24_cart_v1";
+
+    const cartBtn   = document.getElementById('navCart');
+    const cartCount = document.getElementById('navCartCount');
+    const drawer    = document.getElementById('cartDrawer');
+    const itemsEl   = document.getElementById('cartItems');
+    const emptyEl   = document.getElementById('cartEmpty');
+    const footEl    = document.getElementById('cartFoot');
+    const totalEl   = document.getElementById('cartTotal');
+    const acompteEl = document.getElementById('cartAcompte');
+    const checkoutBtn = document.getElementById('cartCheckout');
+    const modal     = document.getElementById('checkoutModal');
+
+    let cart = load();
+    function load(){ try{ return JSON.parse(localStorage.getItem(STORAGE)) || []; } catch(e){ return []; } }
+    function save(){ localStorage.setItem(STORAGE, JSON.stringify(cart)); }
+    function fmt(n){ return n.toLocaleString('fr-FR') + ' €'; }
+
+    function add(key){
+      if (!PACKS[key]) return;
+      if (!cart.find(x => x.key === key)) cart.push({ key, type: 'pack' });
+      save(); render(); open();
+      flash(cartBtn);
+    }
+    function addCustom(item){
+      if (!item || !item.key) return;
+      if (cart.find(x => x.key === item.key)) return;
+      cart.push({ ...item, type: 'custom' });
+      save(); render(); open();
+      flash(cartBtn);
+    }
+    function remove(key){
+      cart = cart.filter(x => x.key !== key);
+      save(); render();
+    }
+    function getItem(entry){
+      if (entry.type === 'custom') return { name: entry.name, subtitle: entry.subtitle, price: entry.price, questions: [] };
+      return PACKS[entry.key];
+    }
+
+    function render(){
+      cartCount.textContent = cart.length;
+      cartCount.classList.toggle('visible', cart.length > 0);
+      if (cart.length === 0){
+        itemsEl.innerHTML = '';
+        emptyEl.style.display = 'block';
+        footEl.style.display  = 'none';
+        return;
+      }
+      emptyEl.style.display = 'none';
+      footEl.style.display  = 'block';
+      let total = 0;
+      itemsEl.innerHTML = cart.map(x => {
+        const p = getItem(x);
+        if (!p) return '';
+        total += p.price;
+        return `
+          <div class="cart-item">
+            <div class="cart-item-body">
+              <span class="cart-item-name">${p.name}</span>
+              <span class="cart-item-sub">${p.subtitle}</span>
+            </div>
+            <div class="cart-item-side">
+              <span class="cart-item-price">${fmt(p.price)}</span>
+              <button class="cart-item-remove" data-remove="${x.key}" aria-label="Retirer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M6 6l1 14a2 2 0 002 2h6a2 2 0 002-2l1-14"/></svg>
+              </button>
+            </div>
+          </div>`;
+      }).join('');
+      totalEl.textContent   = fmt(total);
+      acompteEl.textContent = fmt(Math.round(total * ACOMPTE / 100));
+    }
+
+    function open(){ drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    function close(){ drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    function flash(el){ el.classList.add('pulse'); setTimeout(()=>el.classList.remove('pulse'),700); }
+
+    cartBtn?.addEventListener('click', () => drawer.classList.contains('open') ? close() : open());
+    drawer.addEventListener('click', e => {
+      if (e.target.closest('[data-close-cart]')) close();
+      const rm = e.target.closest('[data-remove]');
+      if (rm) remove(rm.dataset.remove);
+    });
+
+    /* -------- CHECKOUT -------- */
+    let step = 0;
+    const body = document.getElementById('checkoutBody');
+    const stepEl = document.getElementById('checkoutStep');
+    const titleEl = document.getElementById('checkoutTitle');
+    const introEl = document.getElementById('checkoutIntro');
+    const prevBtn = document.getElementById('checkoutPrev');
+    const nextBtn = document.getElementById('checkoutNext');
+    const form    = document.getElementById('checkoutForm');
+    const success = document.getElementById('checkoutSuccess');
+
+    checkoutBtn?.addEventListener('click', () => {
+      if (cart.length === 0) return;
+      close(); openCheckout();
+    });
+
+    function openCheckout(){
+      step = 0;
+      success.style.display = 'none';
+      form.style.display = 'block';
+      renderStep();
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeCheckout(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+    modal.addEventListener('click', e => {
+      if (e.target.closest('[data-close-checkout]')) closeCheckout();
+    });
+
+    function packsInCart(){ return cart.filter(x => x.type === 'pack'); }
+    function renderStep(){
+      const packs = packsInCart();
+      const totalSteps = 2 + packs.length + 1; // 1: coord, 2: date/lieu, +N pack questions, récap
+      stepEl.textContent = `Étape ${step + 1} / ${totalSteps}`;
+      prevBtn.style.visibility = step === 0 ? 'hidden' : 'visible';
+
+      if (step === 0){
+        titleEl.textContent = 'Vos coordonnées';
+        introEl.textContent = 'Pour vous répondre et confirmer votre réservation.';
+        body.innerHTML = `
+          <div class="ck-grid">
+            <label><span>Nom *</span><input type="text" name="nom" required autocomplete="family-name" value="${getVal('nom')}"></label>
+            <label><span>Prénom *</span><input type="text" name="prenom" required autocomplete="given-name" value="${getVal('prenom')}"></label>
+            <label class="full"><span>Email *</span><input type="email" name="email" required autocomplete="email" value="${getVal('email')}"></label>
+            <label class="full"><span>Téléphone *</span><input type="tel" name="telephone" required autocomplete="tel" value="${getVal('telephone')}"></label>
+            <label class="full"><span>Type de client *</span>
+              <div class="ck-chips">
+                <label class="ck-chip"><input type="radio" name="type_client" value="Particulier" ${getVal('type_client')==='Particulier'?'checked':'checked'}> Particulier</label>
+                <label class="ck-chip"><input type="radio" name="type_client" value="Professionnel" ${getVal('type_client')==='Professionnel'?'checked':''}> Professionnel</label>
+              </div>
+            </label>
+          </div>`;
+        nextBtn.innerHTML = 'Suivant <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+      }
+      else if (step === 1){
+        titleEl.textContent = 'Votre événement';
+        introEl.textContent = 'Date, lieu et détails de votre événement.';
+        body.innerHTML = `
+          <div class="ck-grid">
+            <label class="full"><span>Date de l'événement *</span><input type="date" name="date" required value="${getVal('date')}"></label>
+            <label class="full"><span>Lieu (ville, département) *</span><input type="text" name="lieu" required placeholder="Ex : Paris (75)" value="${getVal('lieu')}"></label>
+            <label class="full"><span>Message complémentaire</span><textarea name="message_libre" placeholder="Contexte, envies particulières, questions…" rows="3">${getVal('message_libre')}</textarea></label>
+          </div>`;
+      }
+      else if (step >= 2 && step < 2 + packs.length){
+        const idx = step - 2;
+        const p = PACKS[packs[idx].key];
+        titleEl.textContent = p.name;
+        introEl.textContent = `Quelques questions pour préparer votre prestation (${idx + 1}/${packs.length})`;
+        body.innerHTML = `
+          <div class="ck-pack-head">
+            <span class="ck-pack-sub">${p.subtitle}</span>
+            <strong class="ck-pack-price">${fmt(p.price)}</strong>
+          </div>
+          <div class="ck-grid">
+            ${p.questions.map(q => `
+              <label class="full">
+                <span>${q.label}${q.required ? ' *' : ''}</span>
+                <input type="${q.type}" name="pack_${packs[idx].key}_${q.key}" ${q.required ? 'required' : ''} value="${getVal('pack_'+packs[idx].key+'_'+q.key)}">
+              </label>
+            `).join('')}
+          </div>`;
+      }
+      else {
+        // Récap
+        titleEl.textContent = 'Récapitulatif de votre demande';
+        introEl.textContent = "Vérifiez puis envoyez. Vous recevrez notre RIB et votre contrat sous 24 h.";
+        let total = 0;
+        const itemsHtml = cart.map(x => {
+          const p = getItem(x);
+          total += p.price;
+          return `<div class="ck-recap-item"><span>${p.name}</span><strong>${fmt(p.price)}</strong></div>`;
+        }).join('');
+        const acompte = Math.round(total * ACOMPTE / 100);
+        body.innerHTML = `
+          <div class="ck-recap">
+            ${itemsHtml}
+            <div class="ck-recap-total"><span>Total</span><strong>${fmt(total)}</strong></div>
+            <div class="ck-recap-acompte"><span>Acompte indicatif (${ACOMPTE}%)</span><strong>${fmt(acompte)}</strong></div>
+            <p class="ck-recap-note">Notre équipe vous répondra sous 24 h avec le <strong>RIB</strong> pour l'acompte et votre <strong>contrat</strong> de prestation.</p>
+          </div>`;
+        nextBtn.innerHTML = 'Envoyer ma demande <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+      }
+    }
+
+    function getVal(name){
+      const el = form.querySelector(`[name="${name}"]`);
+      return el ? (el.value || '').replace(/"/g, '&quot;') : '';
+    }
+    function saveStepValues(){
+      // Rien à faire : les champs sont dans le form, ils gardent leur value tant qu'ils existent
+    }
+
+    prevBtn?.addEventListener('click', () => {
+      if (step > 0){ step--; renderStep(); }
+    });
+    nextBtn?.addEventListener('click', () => {
+      // Validation HTML5 des champs visibles
+      const inputs = body.querySelectorAll('input[required], select[required], textarea[required]');
+      for (const inp of inputs){
+        if (!inp.checkValidity()){ inp.reportValidity(); return; }
+      }
+      const totalSteps = 2 + packsInCart().length + 1;
+      if (step < totalSteps - 1){ step++; renderStep(); return; }
+      // Dernière étape → submit
+      submitOrder();
+    });
+
+    function submitOrder(){
+      // Récupérer les infos client
+      const prenom = form.querySelector('[name="prenom"]')?.value?.trim() || '';
+      const nom    = form.querySelector('[name="nom"]')?.value?.trim() || '';
+      const tel    = form.querySelector('[name="telephone"]')?.value?.trim() || '';
+      const email  = form.querySelector('[name="email"]')?.value?.trim() || '';
+      const dateEv = form.querySelector('[name="date"]')?.value?.trim() || '';
+      const lieu   = form.querySelector('[name="lieu"]')?.value?.trim() || '';
+      const typeCl = form.querySelector('[name="type_client"]:checked')?.value || '';
+
+      // Construire le récap texte
+      let total = 0;
+      let recap = "═══════════════════════════════════\n";
+      recap += "🔔 NOUVELLE RÉSERVATION VISION 24\n";
+      recap += "═══════════════════════════════════\n\n";
+      recap += "👤 CLIENT À RAPPELER :\n";
+      recap += `   ${prenom} ${nom} (${typeCl})\n`;
+      recap += `   📞 ${tel}\n`;
+      recap += `   ✉️  ${email}\n\n`;
+      recap += "📅 ÉVÉNEMENT :\n";
+      recap += `   Date : ${dateEv}\n`;
+      recap += `   Lieu : ${lieu}\n\n`;
+      recap += "🛒 PRESTATIONS RÉSERVÉES :\n";
+      cart.forEach(x => {
+        const p = getItem(x);
+        total += p.price;
+        recap += `\n   ▸ ${p.name} — ${fmt(p.price)}\n`;
+        recap += `     ${p.subtitle}\n`;
+        if (x.type === 'pack' && p.questions){
+          p.questions.forEach(q => {
+            const val = form.querySelector(`[name="pack_${x.key}_${q.key}"]`)?.value || '—';
+            recap += `      • ${q.label} : ${val}\n`;
+          });
+        }
+      });
+      const acompte = Math.round(total * ACOMPTE / 100);
+      recap += `\n═══════════════════════════════════\n`;
+      recap += `💰 TOTAL : ${fmt(total)}\n`;
+      recap += `💳 ACOMPTE ${ACOMPTE}% (à payer maintenant) : ${fmt(acompte)}\n`;
+      recap += `📌 SOLDE (avant événement) : ${fmt(total - acompte)}\n`;
+      recap += `═══════════════════════════════════\n`;
+
+      document.getElementById('recapCommande').value = recap;
+      document.getElementById('hiddenTotal').value = fmt(total);
+      document.getElementById('hiddenAcompte').value = fmt(acompte);
+
+      // Sujet dynamique — nom client + montant acompte pour repérer en un coup d'œil
+      document.getElementById('hiddenSubject').value =
+        `🔔 Réservation Vision 24 — ${prenom} ${nom} — Acompte ${fmt(acompte)} — Événement ${dateEv}`;
+
+      // Envoi via fetch pour éviter le redirect formsubmit
+      const fd = new FormData(form);
+      fetch(form.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+        .then(() => {
+          form.style.display = 'none';
+          success.style.display = 'block';
+          // Vider le panier
+          cart = []; save(); render();
+        })
+        .catch(() => {
+          alert('Erreur d\'envoi. Merci de réessayer ou de nous contacter directement à ap.vision24@outlook.fr');
+        });
+    }
+
+    // Expose globalement
+    window.VISION24_CART = { add, addCustom, remove, open, close };
+
+    // Init
+    render();
+
+    /* -------- Ajout au panier depuis les prestations individuelles -------- */
+    function priceFromKey(key){
+      const path = key.split('.');
+      let v = CFG;
+      path.forEach(k => { v = v && v[k]; });
+      if (typeof v !== 'string') return 0;
+      // Extraire uniquement le montant "now" ou le nombre
+      const now = v.match(/<span class="now">([^<]+)<\/span>/);
+      const text = now ? now[1] : v;
+      const digits = text.replace(/[^\d]/g, '');
+      return digits ? parseInt(digits, 10) : 0;
+    }
+    function humanizeSection(id){
+      const map = {
+        photobooth: 'Photobooth',
+        box: 'Box Magazine',
+        videobooth: 'Vidéobooth 360°',
+        video: 'Captation vidéo',
+        bars: 'Bar gourmand',
+      };
+      return map[id] || 'Prestation';
+    }
+    document.querySelectorAll('.presta-card, .bar-card, #video .video-card').forEach(card => {
+      const priceEl = card.querySelector('[data-price]');
+      if (!priceEl) return;
+      const priceKey = priceEl.getAttribute('data-price');
+      const priceNum = priceFromKey(priceKey);
+      if (!priceNum) return;
+
+      const sectionId = card.closest('section')?.id || '';
+      const isVideo = sectionId === 'video';
+      const isBar = card.classList.contains('bar-card');
+      const durée = card.querySelector('h4')?.textContent?.trim() || '';
+
+      let name, subtitle;
+      if (isVideo){
+        name = durée;
+        subtitle = card.querySelector('.video-sub')?.textContent?.trim() || 'Captation vidéo';
+      } else if (isBar){
+        name = durée;
+        subtitle = 'Bar gourmand';
+      } else {
+        name = humanizeSection(sectionId) + ' — ' + durée;
+        subtitle = 'Prestation individuelle';
+      }
+
+      card.classList.add('is-clickable');
+      // Petit badge "+"
+      const plus = document.createElement('span');
+      plus.className = 'add-cart-plus';
+      plus.setAttribute('aria-hidden', 'true');
+      plus.textContent = '+';
+      card.appendChild(plus);
+
+      card.addEventListener('click', (e) => {
+        // Ignorer clics sur boutons/liens internes
+        if (e.target.closest('a, button, summary, details, .hero-carousel')) return;
+        addCustom({
+          key: 'custom_' + priceKey.replace(/\./g, '_'),
+          name, subtitle, price: priceNum,
+        });
+      });
+    });
+  })();
+
+  /* --- Effet parallaxe curseur sur les packs --- */
+  document.querySelectorAll('.pack').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', ((e.clientX - r.left)/r.width*100) + '%');
+      card.style.setProperty('--my', ((e.clientY - r.top)/r.height*100) + '%');
+    });
+  });
+</script>
+
+</body>
+</html>
