@@ -3492,20 +3492,28 @@ section{ padding: 120px 0; position: relative; }
   stroke-dashoffset: 40;
   animation: drawCheck .7s cubic-bezier(.22,1,.36,1) .5s both;
 }
-.form-success h3{
+.form-success__pill{
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--bordeaux);
+  color: var(--beige);
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 20px -6px rgba(86,2,22,.4);
+}
+.form-success__msg{
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 42px;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.35;
   color: var(--bordeaux);
-  margin: 0 0 16px;
-  font-weight: 500;
-}
-.form-success p{
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.6;
   margin: 0 auto;
-  max-width: 460px;
+  max-width: 520px;
+  font-weight: 500;
 }
 
 @keyframes fadeUp{
