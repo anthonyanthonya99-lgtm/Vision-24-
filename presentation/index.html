@@ -1199,15 +1199,32 @@
       }
     }
 
+    // Stockage persistant des valeurs (le DOM est réécrit à chaque étape)
+    const formState = {};
     function getVal(name){
-      const el = form.querySelector(`[name="${name}"]`);
-      return el ? (el.value || '').replace(/"/g, '&quot;') : '';
+      return (formState[name] || '').replace(/"/g, '&quot;');
     }
     function saveStepValues(){
-      // Rien à faire : les champs sont dans le form, ils gardent leur value tant qu'ils existent
+      // Sauvegarder tous les champs visibles de l'étape courante
+      body.querySelectorAll('input, select, textarea').forEach(el => {
+        const name = el.name;
+        if (!name) return;
+        if (el.type === 'radio'){
+          if (el.checked) formState[name] = el.value;
+        } else if (el.type === 'checkbox'){
+          // pour les checkboxes multiples : concatène
+          if (!formState[name]) formState[name] = [];
+          const arr = Array.isArray(formState[name]) ? formState[name] : [formState[name]];
+          if (el.checked && !arr.includes(el.value)) arr.push(el.value);
+          formState[name] = arr;
+        } else {
+          formState[name] = el.value || '';
+        }
+      });
     }
 
     prevBtn?.addEventListener('click', () => {
+      saveStepValues();
       if (step > 0){ step--; renderStep(); }
     });
     nextBtn?.addEventListener('click', () => {
@@ -1216,6 +1233,7 @@
       for (const inp of inputs){
         if (!inp.checkValidity()){ inp.reportValidity(); return; }
       }
+      saveStepValues();
       const totalSteps = 2 + packsInCart().length + 1;
       if (step < totalSteps - 1){ step++; renderStep(); return; }
       // Dernière étape → submit
@@ -1223,14 +1241,18 @@
     });
 
     function submitOrder(){
-      // Récupérer les infos client
-      const prenom = form.querySelector('[name="prenom"]')?.value?.trim() || '';
-      const nom    = form.querySelector('[name="nom"]')?.value?.trim() || '';
-      const tel    = form.querySelector('[name="telephone"]')?.value?.trim() || '';
-      const email  = form.querySelector('[name="email"]')?.value?.trim() || '';
-      const dateEv = form.querySelector('[name="date"]')?.value?.trim() || '';
-      const lieu   = form.querySelector('[name="lieu"]')?.value?.trim() || '';
-      const typeCl = form.querySelector('[name="type_client"]:checked')?.value || '';
+      // IMPORTANT : sauvegarder les valeurs de l'étape courante avant tout
+      saveStepValues();
+
+      // Récupérer les infos client depuis le state persistant
+      const prenom = (formState.prenom || '').trim();
+      const nom    = (formState.nom || '').trim();
+      const tel    = (formState.telephone || '').trim();
+      const email  = (formState.email || '').trim();
+      const dateEv = (formState.date || '').trim();
+      const lieu   = (formState.lieu || '').trim();
+      const typeCl = formState.type_client || '';
+      const msgLibre = (formState.message_libre || '').trim();
 
       // Construire le récap texte
       let total = 0;
@@ -1244,6 +1266,7 @@
       recap += "📅 ÉVÉNEMENT :\n";
       recap += `   Date : ${dateEv}\n`;
       recap += `   Lieu : ${lieu}\n\n`;
+      if (msgLibre) recap += `📝 MESSAGE : ${msgLibre}\n\n`;
       recap += "🛒 PRESTATIONS RÉSERVÉES :\n";
       cart.forEach(x => {
         const p = getItem(x);
@@ -1252,7 +1275,7 @@
         recap += `     ${p.subtitle}\n`;
         if (x.type === 'pack' && p.questions){
           p.questions.forEach(q => {
-            const val = form.querySelector(`[name="pack_${x.key}_${q.key}"]`)?.value || '—';
+            const val = formState[`pack_${x.key}_${q.key}`] || '—';
             recap += `      • ${q.label} : ${val}\n`;
           });
         }
@@ -1273,7 +1296,17 @@
         `🔔 Réservation Vision 24 — ${prenom} ${nom} — Acompte ${fmt(acompte)} — Événement ${dateEv}`;
 
       // Envoi via fetch pour éviter le redirect formsubmit
-      const fd = new FormData(form);
+      // On construit un FormData manuellement à partir du formState pour inclure tous les champs
+      const fd = new FormData();
+      Object.keys(formState).forEach(key => {
+        const val = formState[key];
+        if (Array.isArray(val)) val.forEach(v => fd.append(key, v));
+        else fd.append(key, val);
+      });
+      // Ajouter les champs cachés du form (subject, template, recap, etc.)
+      form.querySelectorAll('input[type="hidden"]').forEach(el => {
+        fd.append(el.name, el.value);
+      });
       fetch(form.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
         .then(() => {
           form.style.display = 'none';
