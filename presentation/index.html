@@ -766,9 +766,9 @@
       </div>
     </form>
 
-    <div class="form-success" id="devis-success" aria-live="polite">
+    <div class="form-success" id="devis-success" aria-live="polite" hidden style="display:none">
       <div class="form-success__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
       </div>
       <h3>Demande envoyée</h3>
       <p>Votre demande a bien été envoyée. Nous vous répondrons dans les plus brefs délais.</p>
@@ -816,6 +816,8 @@
         });
         if (!res.ok) throw new Error('Erreur serveur');
         form.style.display = 'none';
+        success.removeAttribute('hidden');
+        success.style.display = 'block';
         success.classList.add('is-shown');
         success.scrollIntoView({ behavior: 'smooth', block: 'center' });
         form.reset();
