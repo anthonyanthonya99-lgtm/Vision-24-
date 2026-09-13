@@ -1,0 +1,20 @@
+# Force HTTPS pour tous les endpoints
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# URL clean (optionnel) : /api/intake → /api/intake.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(intake|pull|ack|health)$ $1.php [L]
+
+# Cache disabled pour les endpoints
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-store, no-cache, must-revalidate"
+</IfModule>
+
+# Bloque l'accès aux fichiers config et data
+<FilesMatch "^(config\.php|.*\.log|.*\.json)$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
