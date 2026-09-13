@@ -21,7 +21,13 @@ const ALLOWED_ORIGINS = [
     'https://vision24.fun',
     'https://www.vision24.fun',
     'https://crm.vision24.fr',   // adapte au sous-domaine où tu déploies le CRM
-    'http://localhost:4321',      // test local
+    'http://localhost:4321',      // test local Astro/dev
+    'http://localhost:8765',      // test local Python http.server (CRM Anthony)
+    'http://localhost:8000',      // test local générique
+    'http://localhost:3000',      // test local Node
+    'http://localhost:5173',      // test local Vite
+    'http://127.0.0.1:8765',     // équivalent 127.0.0.1
+    'null',                       // origine null (fichier file:// ouvert directement)
 ];
 
 // Où stocker les demandes (chemin absolu recommandé, hors du dossier public)
