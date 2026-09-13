@@ -38,7 +38,7 @@ if (strpos($origin, 'vision24.fun') !== false) $source = 'vision24.fun';
 if (!empty($input['source'])) $source = $input['source'];
 
 /* ---------- Mapping des noms de champs standards ---------- */
-$services = $input['services'] ?? $input['services[]'] ?? [];
+$services = $input['services'] ?? $input['services[]'] ?? $input['prestations'] ?? $input['prestation'] ?? [];
 if (!is_array($services) && $services !== '') $services = [$services];
 
 $payload = [
@@ -50,11 +50,11 @@ $payload = [
     'email'          => trim($input['email']          ?? ''),
     'tel'            => trim($input['tel']            ?? $input['telephone']    ?? $input['phone']     ?? ''),
     'typeClient'     =>       $input['typeClient']    ?? $input['type_client']  ?? ($input['company'] ?? '' ? 'professionnel' : 'particulier'),
-    'typeEvenement'  => trim($input['typeEvenement']  ?? $input['type_event']   ?? $input['event_type'] ?? ''),
-    'dateEvenement'  => trim($input['dateEvenement']  ?? $input['date_event']   ?? $input['event_date'] ?? ''),
+    'typeEvenement'  => trim($input['typeEvenement']  ?? $input['type_evenement'] ?? $input['type_event']   ?? $input['event_type'] ?? ''),
+    'dateEvenement'  => trim($input['dateEvenement']  ?? $input['date_evenement'] ?? $input['date_event']   ?? $input['event_date'] ?? $input['date'] ?? ''),
     'horaires'       => trim($input['horaires']       ?? $input['schedule']     ?? ''),
-    'lieuEvenement'  => trim($input['lieuEvenement']  ?? $input['event_location'] ?? $input['location'] ?? $input['lieu'] ?? ''),
-    'nbPersonnes'    => (int) ($input['nbPersonnes']  ?? $input['guests']       ?? $input['guest_count'] ?? $input['nb_pers'] ?? 0) ?: null,
+    'lieuEvenement'  => trim($input['lieuEvenement']  ?? $input['lieu_evenement'] ?? $input['event_location'] ?? $input['location'] ?? $input['lieu'] ?? ''),
+    'nbPersonnes'    => (int) ($input['nbPersonnes']  ?? $input['nb_invites']   ?? $input['invites']    ?? $input['guests']       ?? $input['guest_count'] ?? $input['nb_pers'] ?? 0) ?: null,
     'budget'         => (int) ($input['budget']       ?? 0) ?: null,
     'services'       => array_values(array_filter((array)$services)),
     'message'        => trim($input['message']        ?? $input['commentaire']  ?? ''),
