@@ -34,32 +34,41 @@
     return parts.slice(-2).join('/') || 'accueil';
   }
 
-  async function sendToCRM(form) {
-    try {
-      const fd = new FormData(form);
-      const data = {};
-      fd.forEach((v, k) => {
-        // Regroupe les valeurs multiples (checkboxes)
-        if (k in data) {
-          if (Array.isArray(data[k])) data[k].push(v);
-          else data[k] = [data[k], v];
-        } else data[k] = v;
-      });
-      data.source = data.source || sourceFromLocation();
-      data.pageOrigine = pathHint();
-      data.userAgent = navigator.userAgent.slice(0, 200);
+  function buildPayload(form) {
+    const fd = new FormData(form);
+    const data = {};
+    fd.forEach((v, k) => {
+      if (k in data) {
+        if (Array.isArray(data[k])) data[k].push(v);
+        else data[k] = [data[k], v];
+      } else data[k] = v;
+    });
+    data.source = data.source || sourceFromLocation();
+    data.pageOrigine = pathHint();
+    data.userAgent = navigator.userAgent.slice(0, 200);
+    return data;
+  }
 
-      // Envoi fire-and-forget avec keepalive pour survivre au unload
-      await fetch(API_URL, {
+  function sendToCRM(form) {
+    try {
+      const data = buildPayload(form);
+      const body = JSON.stringify(data);
+      // Priorité : sendBeacon (100% garanti de partir avant le unload)
+      if (navigator.sendBeacon) {
+        const blob = new Blob([body], { type: 'application/json' });
+        const ok = navigator.sendBeacon(API_URL, blob);
+        if (ok) return;
+      }
+      // Fallback : fetch keepalive
+      fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: body,
         keepalive: true,
         mode: 'cors',
         credentials: 'omit',
-      });
+      }).catch(() => {});
     } catch (e) {
-      /* silence : ne bloque JAMAIS l'envoi original */
       console.warn('[Vision24 CRM] intake failed', e);
     }
   }
@@ -67,11 +76,20 @@
   function attach(form) {
     if (form.__v24Bound) return;
     form.__v24Bound = true;
+    // Envoi au CRM dès le submit (avant que la page ne navigue)
     form.addEventListener('submit', function () {
-      // Ne pas prevenir : on laisse le formulaire faire son travail normal.
-      // On envoie en parallèle au CRM.
       try { sendToCRM(form); } catch (_) {}
     }, { capture: true });
+    // Filet de sécurité : envoi aussi juste avant unload si formulaire touché
+    let touched = false;
+    form.addEventListener('input', () => { touched = true; }, { capture: true });
+    window.addEventListener('beforeunload', function () {
+      // Seulement si le formulaire a été touché ET que le submit vient de se produire
+      if (touched && form.__v24Submitted) {
+        try { sendToCRM(form); } catch (_) {}
+      }
+    });
+    form.addEventListener('submit', () => { form.__v24Submitted = true; }, { capture: true });
   }
 
   function scanForms() {
